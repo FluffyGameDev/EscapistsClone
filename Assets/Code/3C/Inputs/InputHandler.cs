@@ -1,27 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class InputHandler : MonoBehaviour
+namespace FluffyGameDev.Escapists.Input
 {
-    [SerializeField]
-    private float m_Speed = 1.0f;
-
-    private PlayerInput m_PlayerInput;
-
-    private void Start()
+    public class InputHandler : MonoBehaviour
     {
-        m_PlayerInput = GetComponent<PlayerInput>();
-    }
+        [SerializeField]
+        private float m_Speed = 1.0f;
 
-    private void FixedUpdate()
-    {
-        var axis = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
-        transform.position = transform.position + new Vector3(axis.x, axis.y, 0.0f) * m_Speed * Time.fixedDeltaTime;
-    }
+        private PlayerInput m_PlayerInput;
+        private Interactable.Interactor m_Interactor;
 
-    public void OnInteract(InputAction.CallbackContext context)
-    {
+        private void Start()
+        {
+            m_PlayerInput = GetComponent<PlayerInput>();
+            m_Interactor = GetComponent<Interactable.Interactor>();
+        }
+
+        private void Update()
+        {
+            var axis = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
+            transform.position = transform.position + new Vector3(axis.x, axis.y, 0.0f) * m_Speed * Time.deltaTime;
+        }
+
+        public void OnInteract(InputAction.CallbackContext context)
+        {
+            Interactable.Interactable bestInteractable = m_Interactor.bestInteractable;
+            if (bestInteractable != null)
+            {
+                bestInteractable.TriggerInteraction();
+            }
+        }
     }
 }
