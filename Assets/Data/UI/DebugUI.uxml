@@ -1,0 +1,4 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Label text="Inventory:" display-tooltip-when-elided="false" name="lbl_Title" enable-rich-text="false" picking-mode="Ignore" style="font-size: 24px;" />
+    <ui:ListView focusable="false" picking-mode="Ignore" show-border="true" selection-type="None" show-foldout-header="false" name="lst_Items" style="left: 20px;" />
+</ui:UXML>

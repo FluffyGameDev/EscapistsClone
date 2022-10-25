@@ -15,7 +15,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
             {
                 m_Item = item;
                 m_Quantity += quantity;
-                OnSlotModified.Invoke(this);
+                OnSlotModified?.Invoke(this);
                 return true;
             }
 
@@ -28,7 +28,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
             {
                 m_Item = null;
                 m_Quantity = 0;
-                OnSlotModified.Invoke(this);
+                OnSlotModified?.Invoke(this);
             }
         }
 
