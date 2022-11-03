@@ -90,7 +90,7 @@ namespace FluffyGameDev.Escapists.UI
                 m_Slot = slot;
                 m_Label = root.Q<Label>();
                 m_DropButton = root.Q<Button>("bt_DropButton");
-                m_UseButton = root.Q<Button>("m_UseButton");
+                m_UseButton = root.Q<Button>("bt_UseButton");
 
                 UpdateItem(slot);
                 m_Slot.OnSlotModified += UpdateItem;
