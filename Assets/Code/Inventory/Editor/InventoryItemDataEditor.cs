@@ -46,14 +46,10 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
 
         private void BindBehaviour(VisualElement element, int index)
         {
-            ObjectField newField = new();
-            newField.value = ((InventoryItemData)target).behaviourCreators[index];
-            element.Add();
         }
 
         private void UnbindBehaviour(VisualElement element, int index)
         {
-            element.Clear();
         }
 
         private List<string> ComputeBehaviourTypes()
