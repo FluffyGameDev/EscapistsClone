@@ -13,3 +13,7 @@ MonoBehaviour:
   m_Name: ItemA
   m_EditorClassIdentifier: 
   m_ItemName: Item A
+  m_behaviourCreators: []
+  references:
+    version: 2
+    RefIds: []

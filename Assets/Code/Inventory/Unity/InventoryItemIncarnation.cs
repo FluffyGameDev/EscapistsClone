@@ -13,12 +13,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
 
         public void PickUpItem()
         {
-            if (inventoryItem == null)
-            {
-                inventoryItem = new();
-                inventoryItem.itemName = m_InventoryItemData.itemName;
-                //TODO: cache items
-            }
+            inventoryItem ??= m_InventoryItemData.CreateItem();
             m_InventoryChannel.RaiseItemPickUp(inventoryItem);
         }
     }

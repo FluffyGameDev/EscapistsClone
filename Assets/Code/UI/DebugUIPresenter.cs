@@ -39,10 +39,17 @@ namespace FluffyGameDev.Escapists.UI
             listElement.pickingMode = PickingMode.Ignore;
             listElement.style.flexDirection = FlexDirection.Row;
 
-            Button button = new();
-            button.style.width = 32;
-            button.text = "X";
-            listElement.Add(button);
+            Button dropButton = new();
+            dropButton.name = "bt_DropButton";
+            dropButton.style.width = 32;
+            dropButton.text = "X";
+            listElement.Add(dropButton);
+
+            Button useButton = new();
+            useButton.name = "bt_UseButton";
+            useButton.style.width = 32;
+            useButton.text = "Use";
+            listElement.Add(useButton);
 
             Label label = new();
             label.pickingMode = PickingMode.Ignore;
@@ -72,35 +79,51 @@ namespace FluffyGameDev.Escapists.UI
             private InventoryChannel m_InventoryChannel;
             private InventorySlot m_Slot;
             private Label m_Label;
-            private Button m_Button;
+            private Button m_DropButton;
+            private Button m_UseButton;
+
+            private ToolItemBehaviour m_ToolBehaviour;
 
             public InventorySlotDebugUI(VisualElement root, InventorySlot slot, InventoryChannel inventoryChannel)
             {
                 m_InventoryChannel = inventoryChannel;
                 m_Slot = slot;
                 m_Label = root.Q<Label>();
-                m_Button = root.Q<Button>();
+                m_DropButton = root.Q<Button>("bt_DropButton");
+                m_UseButton = root.Q<Button>("m_UseButton");
 
-                UpdateItemText(slot);
-                m_Slot.OnSlotModified += UpdateItemText;
+                UpdateItem(slot);
+                m_Slot.OnSlotModified += UpdateItem;
 
-                m_Button.clicked += OnPressRemoveItem;
+                m_DropButton.clicked += OnPressRemoveItem;
+                m_UseButton.clicked += OnPressUseItem;
             }
 
             public void Shutdown()
             {
-                m_Button.clicked -= OnPressRemoveItem;
-                m_Slot.OnSlotModified -= UpdateItemText;
+                m_UseButton.clicked -= OnPressUseItem;
+                m_DropButton.clicked -= OnPressRemoveItem;
+                m_Slot.OnSlotModified -= UpdateItem;
             }
 
-            private void UpdateItemText(InventorySlot slot)
+            private void UpdateItem(InventorySlot slot)
             {
-                m_Label.text = slot.Item != null ? $"{slot.Item.itemName} x {slot.Quantity}" : "No Item";
+                bool displaySlot = slot.Item != null;
+                m_ToolBehaviour = displaySlot ? slot.Item.FindBehaviour<ToolItemBehaviour>() : null;
+
+                m_UseButton.style.display = m_ToolBehaviour != null ? DisplayStyle.Flex : DisplayStyle.None;
+                m_DropButton.style.display = displaySlot ? DisplayStyle.Flex : DisplayStyle.None;
+                m_Label.text = displaySlot ? $"{slot.Item.itemName} x {slot.Quantity}" : "No Item";
             }
 
             private void OnPressRemoveItem()
             {
                 m_InventoryChannel.RaiseItemDrop(m_Slot);
+            }
+
+            private void OnPressUseItem()
+            {
+                m_ToolBehaviour?.UseTool();
             }
         }
     }

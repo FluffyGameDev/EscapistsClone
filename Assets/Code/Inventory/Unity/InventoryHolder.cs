@@ -42,10 +42,13 @@ namespace FluffyGameDev.Escapists.InventorySystem
 
         private void OnItemDrop(InventorySlot slot)
         {
-            InventoryItemIncarnation itemIncarnation = Instantiate(m_InventoryItemIncarnationPrefab);
-            itemIncarnation.transform.position = transform.position;
-            itemIncarnation.inventoryItem = slot.Item;
-            slot.ClearSlot();
+            if (slot.Item != null)
+            {
+                InventoryItemIncarnation itemIncarnation = Instantiate(m_InventoryItemIncarnationPrefab);
+                itemIncarnation.transform.position = transform.position;
+                itemIncarnation.inventoryItem = slot.Item;
+                slot.ClearSlot();
+            }
         }
     }
 }
