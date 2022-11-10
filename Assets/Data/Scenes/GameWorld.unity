@@ -139,6 +139,7 @@ GameObject:
   - component: {fileID: 25934473}
   - component: {fileID: 25934474}
   - component: {fileID: 25934475}
+  - component: {fileID: 25934476}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -171,22 +172,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_ActionEvents:
-  - m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 25934470}
-        m_TargetAssemblyTypeName: InputHandler, Assembly-CSharp
-        m_MethodName: OnMove
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_ActionId: bc3e34cd-0d11-4d8a-82a3-709560589666
-    m_ActionName: Player/Move[/Keyboard/z,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/q,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 25934470}
@@ -243,6 +228,26 @@ MonoBehaviour:
       m_Calls: []
     m_ActionId: d645c4f9-4f5e-4c10-a835-dc4eccf12e70
     m_ActionName: UI/TrackedDeviceOrientation
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 25934470}
+        m_TargetAssemblyTypeName: FluffyGameDev.Escapists.Input.InputHandler, Assembly-CSharp
+        m_MethodName: OnWorldInteract
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 9fbf0967-cc5a-4dac-80bf-bde826c80fa0
+    m_ActionName: Player/WorldInteraction[/DualShock4GamepadHID/leftTrigger,/Mouse/leftButton]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bc3e34cd-0d11-4d8a-82a3-709560589666
+    m_ActionName: Player/Move[/DualShock4GamepadHID/leftStick,/Keyboard/w,/Keyboard/upArrow,/Keyboard/s,/Keyboard/downArrow,/Keyboard/a,/Keyboard/leftArrow,/Keyboard/d,/Keyboard/rightArrow]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -328,6 +333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Speed: 4
+  m_WorldChannel: {fileID: 11400000, guid: fe1764f05285f684d993aa08405522fc, type: 2}
 --- !u!114 &25934472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +408,20 @@ MonoBehaviour:
   m_SlotCount: 6
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
   m_InventoryItemIncarnationPrefab: {fileID: 2287769609550312985, guid: 93071e4cc27b6af46a0b48ddfc4dac89, type: 3}
+--- !u!114 &25934476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008d88da74135bf4f8d694a67e6f8c86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
+  m_WorldChannel: {fileID: 11400000, guid: fe1764f05285f684d993aa08405522fc, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -800,6 +820,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_InventoryHolder: {fileID: 25934475}
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
+  m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
 --- !u!1001 &1544336727
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -873,6 +894,8 @@ GameObject:
   - component: {fileID: 1737182152}
   - component: {fileID: 1737182151}
   - component: {fileID: 1737182153}
+  - component: {fileID: 1737182154}
+  - component: {fileID: 1737182155}
   m_Layer: 0
   m_Name: Tilemap
   m_TagString: Untagged
@@ -1332,3 +1355,28 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
+--- !u!114 &1737182154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737182149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 64e0393c948423c4d8d66d531965dfc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_WorldChannel: {fileID: 11400000, guid: fe1764f05285f684d993aa08405522fc, type: 2}
+--- !u!114 &1737182155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1737182149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b88bc5e9d7fc02f4dadf49a4b600e51f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

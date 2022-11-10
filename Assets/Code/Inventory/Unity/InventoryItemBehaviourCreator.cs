@@ -2,8 +2,8 @@ using UnityEngine;
 
 namespace FluffyGameDev.Escapists.InventorySystem
 {
-    public interface InventoryItemBehaviourCreator
+    public abstract class InventoryItemBehaviourCreator : ScriptableObject
     {
-        InventoryItemBehaviour Create();
+        public abstract InventoryItemBehaviour Create();
     }
 }

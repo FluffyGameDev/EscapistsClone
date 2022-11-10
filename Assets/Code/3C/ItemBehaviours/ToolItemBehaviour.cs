@@ -12,14 +12,20 @@ namespace FluffyGameDev.Escapists
         [SerializeField]
         private string m_ToolName;
 
-        public InventoryItemBehaviour Create()
+        public override InventoryItemBehaviour Create()
         {
             return this;
         }
 
-        public void UseTool()
+        public void UseTool(WorldDataHolder worldDataHolder, Vector3Int interactionPosition)
         {
-            Debug.Log($"Used Tool ({m_ToolName}).");
+            /* TODO
+            Amount of Damage
+            Types of tiles
+            ...
+            */
+
+            worldDataHolder.DamageTile(interactionPosition, 0.0f);
         }
     }
 }

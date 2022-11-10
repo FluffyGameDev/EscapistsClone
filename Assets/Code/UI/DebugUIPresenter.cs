@@ -1,4 +1,5 @@
 using FluffyGameDev.Escapists.InventorySystem;
+using FluffyGameDev.Escapists.Player;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -12,6 +13,8 @@ namespace FluffyGameDev.Escapists.UI
         private InventoryHolder m_InventoryHolder;
         [SerializeField]
         private InventoryChannel m_InventoryChannel;
+        [SerializeField]
+        private PlayerChannel m_PlayerChannel;
 
         private ListView m_ListView;
         private List<InventorySlot> m_DisplayedSlots;
@@ -46,9 +49,8 @@ namespace FluffyGameDev.Escapists.UI
             listElement.Add(dropButton);
 
             Button useButton = new();
-            useButton.name = "bt_UseButton";
-            useButton.style.width = 32;
-            useButton.text = "Use";
+            useButton.name = "bt_EquipButton";
+            useButton.text = "Equip";
             listElement.Add(useButton);
 
             Label label = new();
@@ -61,7 +63,7 @@ namespace FluffyGameDev.Escapists.UI
         private void BindElement(VisualElement element, int index)
         {
             InventorySlot slot = m_DisplayedSlots[index];
-            InventorySlotDebugUI slotDebugUI = new(element, slot, m_InventoryChannel);
+            InventorySlotDebugUI slotDebugUI = new(element, slot, m_InventoryChannel, m_PlayerChannel);
             m_DebugUISlots[index] = slotDebugUI;
         }
 
@@ -77,31 +79,33 @@ namespace FluffyGameDev.Escapists.UI
         private class InventorySlotDebugUI
         {
             private InventoryChannel m_InventoryChannel;
+            private PlayerChannel m_PlayerChannel;
             private InventorySlot m_Slot;
             private Label m_Label;
             private Button m_DropButton;
-            private Button m_UseButton;
+            private Button m_EquipButton;
 
             private ToolItemBehaviour m_ToolBehaviour;
 
-            public InventorySlotDebugUI(VisualElement root, InventorySlot slot, InventoryChannel inventoryChannel)
+            public InventorySlotDebugUI(VisualElement root, InventorySlot slot, InventoryChannel inventoryChannel, PlayerChannel playerChannel)
             {
                 m_InventoryChannel = inventoryChannel;
+                m_PlayerChannel = playerChannel;
                 m_Slot = slot;
                 m_Label = root.Q<Label>();
                 m_DropButton = root.Q<Button>("bt_DropButton");
-                m_UseButton = root.Q<Button>("bt_UseButton");
+                m_EquipButton = root.Q<Button>("bt_EquipButton");
 
                 UpdateItem(slot);
                 m_Slot.OnSlotModified += UpdateItem;
 
                 m_DropButton.clicked += OnPressRemoveItem;
-                m_UseButton.clicked += OnPressUseItem;
+                m_EquipButton.clicked += OnPressEquipItem;
             }
 
             public void Shutdown()
             {
-                m_UseButton.clicked -= OnPressUseItem;
+                m_EquipButton.clicked -= OnPressEquipItem;
                 m_DropButton.clicked -= OnPressRemoveItem;
                 m_Slot.OnSlotModified -= UpdateItem;
             }
@@ -111,7 +115,7 @@ namespace FluffyGameDev.Escapists.UI
                 bool displaySlot = slot.Item != null;
                 m_ToolBehaviour = displaySlot ? slot.Item.FindBehaviour<ToolItemBehaviour>() : null;
 
-                m_UseButton.style.display = m_ToolBehaviour != null ? DisplayStyle.Flex : DisplayStyle.None;
+                m_EquipButton.style.display = m_ToolBehaviour != null ? DisplayStyle.Flex : DisplayStyle.None;
                 m_DropButton.style.display = displaySlot ? DisplayStyle.Flex : DisplayStyle.None;
                 m_Label.text = displaySlot ? $"{slot.Item.itemName} x {slot.Quantity}" : "No Item";
             }
@@ -121,9 +125,9 @@ namespace FluffyGameDev.Escapists.UI
                 m_InventoryChannel.RaiseItemDrop(m_Slot);
             }
 
-            private void OnPressUseItem()
+            private void OnPressEquipItem()
             {
-                m_ToolBehaviour?.UseTool();
+                m_PlayerChannel.RaiseToolEquip(m_ToolBehaviour);
             }
         }
     }

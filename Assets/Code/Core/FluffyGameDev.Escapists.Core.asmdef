@@ -1,9 +1,7 @@
 {
-    "name": "FluffyGameDev.Escapists.InventorySystem",
-    "rootNamespace": "FluffyGameDev.Escapists.InventorySystem",
-    "references": [
-        "GUID:115be96b7b38c7b43b4363f39b5b1dbe"
-    ],
+    "name": "FluffyGameDev.Escapists.Core",
+    "rootNamespace": "FluffyGameDev.Escapists.Core",
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

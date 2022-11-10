@@ -10,7 +10,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
         private string m_ItemName;
         public string itemName => m_ItemName;
 
-        [SerializeReference]
+        [SerializeField]
         private List<InventoryItemBehaviourCreator> m_behaviourCreators = new();
         public List<InventoryItemBehaviourCreator> behaviourCreators => m_behaviourCreators;
 

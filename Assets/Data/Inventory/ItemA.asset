@@ -13,7 +13,18 @@ MonoBehaviour:
   m_Name: ItemA
   m_EditorClassIdentifier: 
   m_ItemName: Item A
-  m_behaviourCreators: []
-  references:
-    version: 2
-    RefIds: []
+  m_behaviourCreators:
+  - {fileID: 6790135669593799154}
+--- !u!114 &6790135669593799154
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be8be9cb9c8ad22479d0a8fb30025eb7, type: 3}
+  m_Name: ToolItemBehaviour
+  m_EditorClassIdentifier: 
+  m_ToolName: Pickaxe

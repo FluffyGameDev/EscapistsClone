@@ -1,8 +1,8 @@
+using FluffyGameDev.Escapists.Core;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
-using UnityEditor.UIElements;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -18,19 +18,13 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
         private List<Type> m_BehaviourTypes;
         private ListView m_BehaviourList;
         private DropdownField m_BehaviourTypesSelector;
-        private SerializedProperty m_ListProperty;
 
         public override VisualElement CreateInspectorGUI()
         {
             VisualElement newInspector = new();
             m_EditorLayout.CloneTree(newInspector);
 
-            m_ListProperty = serializedObject.FindProperty("m_behaviourCreators");
-
             m_BehaviourList = newInspector.Q<ListView>();
-            m_BehaviourList.makeItem = () => new VisualElement();
-            m_BehaviourList.bindItem = BindBehaviour;
-            m_BehaviourList.unbindItem = UnbindBehaviour;
 
             m_BehaviourTypesSelector = newInspector.Q<DropdownField>();
             m_BehaviourTypesSelector.choices = ComputeBehaviourTypes();
@@ -44,21 +38,13 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
             return newInspector;
         }
 
-        private void BindBehaviour(VisualElement element, int index)
-        {
-        }
-
-        private void UnbindBehaviour(VisualElement element, int index)
-        {
-        }
-
         private List<string> ComputeBehaviourTypes()
         {
             if (m_BehaviourChoices == null)
             {
                 m_BehaviourTypes = AppDomain.CurrentDomain.GetAssemblies()
                     .SelectMany(assembly => assembly.GetTypes())
-                    .Where(type => type.GetInterfaces().Contains(typeof(InventoryItemBehaviourCreator)))
+                    .Where(type => type.IsSubclassOf(typeof(InventoryItemBehaviourCreator)))
                     .ToList();
 
                 m_BehaviourChoices = new();
@@ -73,16 +59,30 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
 
         private void AddItemBehaviour()
         {
-            //TODO: sanity checks!!!
-            InventoryItemData itemData = (InventoryItemData)target;
-            itemData.behaviourCreators.Add((InventoryItemBehaviourCreator)Activator.CreateInstance(m_BehaviourTypes[m_BehaviourTypesSelector.index]));
+            if (MathTools.InRange(m_BehaviourTypesSelector.index, 0, m_BehaviourTypes.Count - 1))
+            {
+                InventoryItemData itemData = (InventoryItemData)target;
+
+                var usedType = m_BehaviourTypes[m_BehaviourTypesSelector.index];
+                var createdBehavior = (InventoryItemBehaviourCreator)CreateInstance(usedType);
+                createdBehavior.name = usedType.Name;
+                itemData.behaviourCreators.Add(createdBehavior);
+
+                AssetDatabase.AddObjectToAsset(createdBehavior, itemData);
+                AssetDatabase.SaveAssets();
+            }
         }
 
         private void RemoveItemBehaviour()
         {
-            //TODO: sanity checks!!!
             InventoryItemData itemData = (InventoryItemData)target;
-            itemData.behaviourCreators.RemoveAt(m_BehaviourList.selectedIndex);
+            if (MathTools.InRange(m_BehaviourList.selectedIndex, 0, itemData.behaviourCreators.Count - 1))
+            {
+                AssetDatabase.RemoveObjectFromAsset(itemData.behaviourCreators[m_BehaviourList.selectedIndex]);
+                itemData.behaviourCreators.RemoveAt(m_BehaviourList.selectedIndex);
+
+                AssetDatabase.SaveAssets();
+            }
         }
     }
 }

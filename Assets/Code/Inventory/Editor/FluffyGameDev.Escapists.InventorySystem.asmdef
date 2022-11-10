@@ -2,7 +2,8 @@
     "name": "FluffyGameDev.Escapists.InventorySystem.Editor",
     "rootNamespace": "FluffyGameDev.Escapists.InventorySystem.Editor",
     "references": [
-        "GUID:9b2b28793fdaabc46bf407b4eb2b59c8"
+        "GUID:9b2b28793fdaabc46bf407b4eb2b59c8",
+        "GUID:115be96b7b38c7b43b4363f39b5b1dbe"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],
