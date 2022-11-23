@@ -5,6 +5,9 @@ namespace FluffyGameDev.Escapists
 {
     public class WorldDataHolder : MonoBehaviour
     {
+        [SerializeField]
+        private TileBase m_DestroyedWallTile;
+
         private Tilemap m_TileMap;
 
         private void Awake()
@@ -15,7 +18,7 @@ namespace FluffyGameDev.Escapists
         public void DamageTile(Vector3Int position, float damageAmount)
         {
             //TODO: apply damage
-            m_TileMap.SetTile(position, null);
+            m_TileMap.SetTile(position, m_DestroyedWallTile);
         }
     }
 }

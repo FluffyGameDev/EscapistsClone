@@ -122,6 +122,10 @@ namespace FluffyGameDev.Escapists.UI
 
             private void OnPressRemoveItem()
             {
+                if (m_ToolBehaviour != null)
+                {
+                    m_PlayerChannel.RaiseToolEquip(null);
+                }
                 m_InventoryChannel.RaiseItemDrop(m_Slot);
             }
 

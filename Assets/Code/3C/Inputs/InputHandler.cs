@@ -13,10 +13,12 @@ namespace FluffyGameDev.Escapists.Input
 
         private PlayerInput m_PlayerInput;
         private Interactable.Interactor m_Interactor;
+        private Animator m_Animator;
         private Direction m_FacingDirection = Direction.Down;
 
         private void Start()
         {
+            m_Animator = GetComponent<Animator>();
             m_PlayerInput = GetComponent<PlayerInput>();
             m_Interactor = GetComponent<Interactable.Interactor>();
         }
@@ -30,6 +32,9 @@ namespace FluffyGameDev.Escapists.Input
             {
                 m_FacingDirection = ComputeDirectionFromMovement(axis);
             }
+
+            m_Animator.SetFloat("WalkingSpeed", axis.magnitude);
+            m_Animator.SetInteger("FacingDirection", (int)m_FacingDirection);
         }
 
         private Direction ComputeDirectionFromMovement(Vector2 movement)
