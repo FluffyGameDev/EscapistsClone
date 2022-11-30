@@ -28,8 +28,8 @@ namespace FluffyGameDev.Escapists.World
         {
             Vector3Int interactedCellCoordinates = m_TileMap.WorldToCell(interactionPosition);
             interactedCellCoordinates += ComputeDirectionTileOffset(direction);
-            Tile tile = m_TileMap.GetTile<Tile>(interactedCellCoordinates);
-            if (tile != null && tile.colliderType != Tile.ColliderType.None)
+            Tile.ColliderType colliderType = m_TileMap.GetColliderType(interactedCellCoordinates);
+            if (colliderType != Tile.ColliderType.None)
             {
                 m_WorldChannel.RaiseWorldInteraction(m_WorldDataHolder, interactedCellCoordinates);
             }
