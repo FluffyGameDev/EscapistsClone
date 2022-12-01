@@ -11,6 +11,10 @@ namespace FluffyGameDev.Escapists.InventorySystem
         public string itemName => m_ItemName;
 
         [SerializeField]
+        private Sprite m_ItemIcon;
+        public Sprite itemIcon => m_ItemIcon;
+
+        [SerializeField]
         private List<InventoryItemBehaviourCreator> m_behaviourCreators = new();
         public List<InventoryItemBehaviourCreator> behaviourCreators => m_behaviourCreators;
 
@@ -18,10 +22,11 @@ namespace FluffyGameDev.Escapists.InventorySystem
         {
             InventoryItem item = new();
             item.itemName = m_ItemName;
+            item.itemIcon = m_ItemIcon;
 
             foreach (var behaviourCreator in m_behaviourCreators)
             {
-                item.AddBehaviour(behaviourCreator.Create());
+                item.AddBehaviour(behaviourCreator.Create(item));
             }
 
             return item;

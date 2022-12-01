@@ -39,7 +39,7 @@ namespace FluffyGameDev.Escapists.Core
 
         private static ServiceLocator ms_Instance;
 
-        private Dictionary<Type, IService> m_Services;
+        private Dictionary<Type, IService> m_Services = new();
 
         private void Awake()
         {
@@ -50,14 +50,6 @@ namespace FluffyGameDev.Escapists.Core
             else
             {
                 Debug.LogError("Tried to register more than one service locator.");
-            }
-        }
-
-        private void OnDestroy()
-        {
-            if (ms_Instance == this)
-            {
-                ms_Instance = null;
             }
         }
     }

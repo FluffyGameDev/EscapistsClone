@@ -1,3 +1,4 @@
+using FluffyGameDev.Escapists.Core;
 using UnityEngine;
 
 namespace FluffyGameDev.Escapists.InventorySystem
@@ -6,15 +7,35 @@ namespace FluffyGameDev.Escapists.InventorySystem
     {
         [SerializeField]
         private InventoryChannel m_InventoryChannel;
-        [SerializeField]
-        private InventoryItemData m_InventoryItemData;
 
-        public InventoryItem inventoryItem;
+        private SpriteRenderer m_SpriteRenderer;
+
+        private InventoryItem m_InventoryItem;
+        public InventoryItem inventoryItem
+        {
+            get => m_InventoryItem;
+            set
+            {
+                if (m_InventoryItem != value)
+                {
+                    m_InventoryItem = value;
+
+                    m_SpriteRenderer.sprite = m_InventoryItem.itemIcon;
+                }
+            }
+        }
+
+        private void Awake()
+        {
+            m_SpriteRenderer = GetComponent<SpriteRenderer>();
+        }
 
         public void PickUpItem()
         {
-            inventoryItem ??= m_InventoryItemData.CreateItem();
             m_InventoryChannel.RaiseItemPickUp(inventoryItem);
+
+            ServiceLocator.LocateService<IInventoryItemIncarnationPool>()
+                .ReleaseIncarnation(this);
         }
     }
 }

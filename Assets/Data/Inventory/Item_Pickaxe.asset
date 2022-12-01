@@ -10,11 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5db139b6fa9d03141af7af0241a127bf, type: 3}
-  m_Name: ItemA
+  m_Name: Item_Pickaxe
   m_EditorClassIdentifier: 
-  m_ItemName: Item A
+  m_ItemName: Pickaxe
+  m_ItemIcon: {fileID: 597812395, guid: 4e446a7d9be94f34ca8800ea325927fb, type: 3}
   m_behaviourCreators:
   - {fileID: 6790135669593799154}
+  - {fileID: 7289132640221679406}
 --- !u!114 &6790135669593799154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28,3 +30,17 @@ MonoBehaviour:
   m_Name: ToolItemBehaviour
   m_EditorClassIdentifier: 
   m_ToolName: Pickaxe
+  m_ToolDamageRatio: 0.25
+--- !u!114 &7289132640221679406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10faee9823c6b414ebd986b5f115f85e, type: 3}
+  m_Name: DurabilityItemBehaviourCreator
+  m_EditorClassIdentifier: 
+  m_DamagePerUse: 0.1

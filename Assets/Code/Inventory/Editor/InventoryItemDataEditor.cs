@@ -16,6 +16,7 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
 
         private List<string> m_BehaviourChoices;
         private List<Type> m_BehaviourTypes;
+        private IMGUIContainer m_ItemProperties;
         private ListView m_BehaviourList;
         private DropdownField m_BehaviourTypesSelector;
 
@@ -25,6 +26,8 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
             m_EditorLayout.CloneTree(newInspector);
 
             m_BehaviourList = newInspector.Q<ListView>();
+            m_ItemProperties = newInspector.Q<IMGUIContainer>();
+            m_ItemProperties.onGUIHandler = OnDrawItemPropertiesGUI;
 
             m_BehaviourTypesSelector = newInspector.Q<DropdownField>();
             m_BehaviourTypesSelector.choices = ComputeBehaviourTypes();
@@ -36,6 +39,15 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
             removeButton.clicked += RemoveItemBehaviour;
 
             return newInspector;
+        }
+
+        void OnDrawItemPropertiesGUI()
+        {
+            SerializedProperty serializedProperty = serializedObject.FindProperty("m_ItemIcon");
+
+            serializedObject.Update();
+            EditorGUILayout.PropertyField(serializedProperty);
+            serializedObject.ApplyModifiedProperties();
         }
 
         private List<string> ComputeBehaviourTypes()

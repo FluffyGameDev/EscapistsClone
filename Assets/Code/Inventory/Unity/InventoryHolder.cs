@@ -1,3 +1,4 @@
+using FluffyGameDev.Escapists.Core;
 using UnityEngine;
 
 namespace FluffyGameDev.Escapists.InventorySystem
@@ -8,14 +9,13 @@ namespace FluffyGameDev.Escapists.InventorySystem
         private int m_SlotCount;
         [SerializeField]
         private InventoryChannel m_InventoryChannel;
-        [SerializeField]
-        private InventoryItemIncarnation m_InventoryItemIncarnationPrefab;
 
         public Inventory inventory { get; private set; }
 
         private void Awake()
         {
             m_InventoryChannel.OnItemPickUp += OnItemPickUp;
+            m_InventoryChannel.OnItemDestroy += OnItemDestroy;
             m_InventoryChannel.OnItemDrop += OnItemDrop;
 
             inventory = new();
@@ -28,6 +28,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
         private void OnDestroy()
         {
             m_InventoryChannel.OnItemDrop -= OnItemDrop;
+            m_InventoryChannel.OnItemDestroy -= OnItemDestroy;
             m_InventoryChannel.OnItemPickUp -= OnItemPickUp;
         }
 
@@ -40,13 +41,21 @@ namespace FluffyGameDev.Escapists.InventorySystem
             }
         }
 
+        private void OnItemDestroy(InventoryItem item)
+        {
+            InventorySlot bestSlot = inventory.FindSlot(slot => slot.Item == item);
+            if (bestSlot != null)
+            {
+                bestSlot.ClearSlot();
+            }
+        }
+
         private void OnItemDrop(InventorySlot slot)
         {
             if (slot.Item != null)
             {
-                InventoryItemIncarnation itemIncarnation = Instantiate(m_InventoryItemIncarnationPrefab);
-                itemIncarnation.transform.position = transform.position;
-                itemIncarnation.inventoryItem = slot.Item;
+                ServiceLocator.LocateService<IInventoryItemIncarnationPool>()
+                    .AcquireIncarnation(transform.position, slot.Item);
                 slot.ClearSlot();
             }
         }

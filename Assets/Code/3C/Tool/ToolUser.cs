@@ -1,11 +1,15 @@
+using FluffyGameDev.Escapists.InventorySystem;
 using FluffyGameDev.Escapists.Player;
 using FluffyGameDev.Escapists.World;
 using UnityEngine;
 
 namespace FluffyGameDev.Escapists.Tool
 {
+    //TODO: rename
     public class ToolUser : MonoBehaviour
     {
+        [SerializeField]
+        private InventoryChannel m_InventoryChannel;
         [SerializeField]
         private PlayerChannel m_PlayerChannel;
         [SerializeField]
@@ -33,7 +37,22 @@ namespace FluffyGameDev.Escapists.Tool
 
         private void OnWorldInteraction(WorldDataHolder worldDataHolder, Vector3Int interactionPosition)
         {
-            m_CurrentTool?.UseTool(worldDataHolder, interactionPosition);
+            if (m_CurrentTool != null)
+            {
+                m_CurrentTool.UseTool(worldDataHolder, interactionPosition);
+
+                DurabilityItemBehaviour durabilityBehaviour = m_CurrentTool.owner.FindBehaviour<DurabilityItemBehaviour>();
+                if (durabilityBehaviour != null)
+                {
+                    durabilityBehaviour.ApplyUseDamage();
+
+                    if (durabilityBehaviour.isBroken)
+                    {
+                        m_InventoryChannel.RaiseItemDestroy(m_CurrentTool.owner);
+                        m_CurrentTool = null;
+                    }
+                }
+            }
         }
     }
 }

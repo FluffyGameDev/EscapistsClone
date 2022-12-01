@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <ui:TextField picking-mode="Ignore" label="Item Name" binding-path="m_ItemName" name="txt_ItemName" />
+    <ui:IMGUIContainer name="ItemProperties" />
     <ui:ListView focusable="true" binding-path="m_behaviourCreators" name="lst_Behaviours" show-add-remove-footer="false" show-border="true" header-title="Behaviours" show-foldout-header="true" show-bound-collection-size="false" />
     <ui:VisualElement name="ctr_AddElement" style="flex-direction: row;">
         <ui:DropdownField index="-1" choices="System.Collections.Generic.List`1[System.String]" name="cb_BehaviourTypes" style="flex-grow: 1;" />

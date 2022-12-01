@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace FluffyGameDev.Escapists.InventorySystem
 {
     public class InventoryItem
     {
         public string itemName; // TODO: localization
+        public Sprite itemIcon; // TODO: Use Addressable key
 
         public void AddBehaviour(InventoryItemBehaviour addedBehaviour)
         {
@@ -16,7 +18,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
         }
 
         public T FindBehaviour<T>()
-            where T : class, InventoryItemBehaviour
+            where T : InventoryItemBehaviour
         {
             m_Behaviours.TryGetValue(typeof(T), out InventoryItemBehaviour foundBehaviour);
             return foundBehaviour as T;
