@@ -1,5 +1,7 @@
+using FluffyGameDev.Escapists.Core;
 using FluffyGameDev.Escapists.InventorySystem;
 using FluffyGameDev.Escapists.Player;
+using FluffyGameDev.Escapists.World;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -16,6 +18,8 @@ namespace FluffyGameDev.Escapists.UI
         [SerializeField]
         private PlayerChannel m_PlayerChannel;
 
+        private Label m_TimeLabel;
+        private Label m_ActivityLabel;
         private ListView m_ListView;
         private List<InventorySlot> m_DisplayedSlots;
         private Dictionary<int, InventorySlotDebugUI> m_DebugUISlots = new();
@@ -26,6 +30,8 @@ namespace FluffyGameDev.Escapists.UI
 
             UIDocument uiDocument = GetComponent<UIDocument>();
             m_ListView = uiDocument.rootVisualElement.Q<ListView>();
+            m_TimeLabel = uiDocument.rootVisualElement.Q<Label>("lbl_Time");
+            m_ActivityLabel = uiDocument.rootVisualElement.Q<Label>("lbl_Activity");
 
             m_ListView.makeItem = MakeListElement;
             m_ListView.bindItem = BindElement;
@@ -34,6 +40,34 @@ namespace FluffyGameDev.Escapists.UI
             m_DisplayedSlots = new(inventory.slotCount);
             inventory.FilterSlots(slot => true, m_DisplayedSlots);
             m_ListView.itemsSource = m_DisplayedSlots;
+
+            ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
+            DateTime time = timeService.CurrentTime;
+            m_TimeLabel.text = $"Day {time.Day}: {time.Hour:D2}:{time.Minute:D2}";
+            timeService.OnTimeChanges += OnTimeChange;
+
+            IScheduleService scheduleService = ServiceLocator.LocateService<IScheduleService>();
+            m_ActivityLabel.text = scheduleService.CurrentActivity != null ? scheduleService.CurrentActivity.ActivityName : "No Activity";
+            scheduleService.OnActivityChange += OnActivityChange;
+        }
+
+        private void OnDestroy()
+        {
+            ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
+            timeService.OnTimeChanges -= OnTimeChange;
+
+            IScheduleService scheduleService = ServiceLocator.LocateService<IScheduleService>();
+            scheduleService.OnActivityChange -= OnActivityChange;
+        }
+
+        private void OnTimeChange(DateTime time)
+        {
+            m_TimeLabel.text = $"Day {time.Day}: {time.Hour:D2}:{time.Minute:D2}";
+        }
+
+        private void OnActivityChange(Activity activity)
+        {
+            m_ActivityLabel.text = activity != null ? activity.ActivityName : "No Activity";
         }
 
         private VisualElement MakeListElement()

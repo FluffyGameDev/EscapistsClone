@@ -14,19 +14,21 @@ namespace FluffyGameDev.Escapists.Input
         private PlayerInput m_PlayerInput;
         private Interactable.Interactor m_Interactor;
         private Animator m_Animator;
+        private Rigidbody2D m_RigidBody;
         private Direction m_FacingDirection = Direction.Down;
 
         private void Start()
         {
             m_Animator = GetComponent<Animator>();
             m_PlayerInput = GetComponent<PlayerInput>();
+            m_RigidBody = GetComponent<Rigidbody2D>();
             m_Interactor = GetComponent<Interactable.Interactor>();
         }
 
         private void Update()
         {
             var axis = m_PlayerInput.actions["Move"].ReadValue<Vector2>();
-            transform.position = transform.position + new Vector3(axis.x, axis.y, 0.0f) * m_Speed * Time.deltaTime;
+            m_RigidBody.velocity = axis * m_Speed;
 
             if (axis != Vector2.zero)
             {
