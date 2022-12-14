@@ -55,7 +55,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
             if (slot.Item != null)
             {
                 ServiceLocator.LocateService<IInventoryItemIncarnationPool>()
-                    .AcquireIncarnation(transform.position, slot.Item);
+                    .AcquireIncarnation(WorldUtils.SnapToGrid(transform.position), slot.Item);
                 slot.ClearSlot();
             }
         }

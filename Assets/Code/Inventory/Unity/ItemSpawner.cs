@@ -8,12 +8,19 @@ namespace FluffyGameDev.Escapists.InventorySystem
         [SerializeField]
         private InventoryItemData m_InventoryItemData;
 
-        private void Start()
+        private void Awake()
         {
             //TODO: cache created items
+
+            ServiceLocator.WaitUntilReady<IInventoryItemIncarnationPool>(OnServiceReady);
+
+        }
+
+        private void OnServiceReady()
+        {
             InventoryItem item = m_InventoryItemData.CreateItem();
             ServiceLocator.LocateService<IInventoryItemIncarnationPool>()
-                .AcquireIncarnation(transform.position, item);
+                .AcquireIncarnation(WorldUtils.SnapToGrid(transform.position), item);
 
             Destroy(gameObject);
         }

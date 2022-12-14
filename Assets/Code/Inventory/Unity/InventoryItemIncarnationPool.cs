@@ -26,7 +26,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
 
         private void OnDestroy()
         {
-            ServiceLocator.UnregisterService<IInventoryItemIncarnationPool>(this);
+            ServiceLocator.UnregisterService<IInventoryItemIncarnationPool>();
         }
 
         public void Init()

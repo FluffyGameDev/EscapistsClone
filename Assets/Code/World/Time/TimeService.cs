@@ -38,7 +38,7 @@ namespace FluffyGameDev.Escapists.World
 
         private void OnDestroy()
         {
-            ServiceLocator.UnregisterService<ITimeService>(this);
+            ServiceLocator.UnregisterService<ITimeService>();
         }
 
         private void Update()

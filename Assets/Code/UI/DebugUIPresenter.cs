@@ -2,7 +2,6 @@ using FluffyGameDev.Escapists.Core;
 using FluffyGameDev.Escapists.InventorySystem;
 using FluffyGameDev.Escapists.Player;
 using FluffyGameDev.Escapists.World;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -42,30 +41,22 @@ namespace FluffyGameDev.Escapists.UI
             inventory.FilterSlots(slot => true, m_DisplayedSlots);
             m_ListView.itemsSource = m_DisplayedSlots;
 
-            StartCoroutine(InitActivity());
+            ServiceLocator.WaitUntilReady<ITimeService>(InitTimeUI);
+            ServiceLocator.WaitUntilReady<IScheduleService>(InitActivityUI);
         }
-
-        private IEnumerator InitActivity()
+        private void InitTimeUI()
         {
-            yield return 0;
-
             ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
             DateTime time = timeService.CurrentTime;
             m_TimeLabel.text = $"Day {time.Day}: {time.Hour:D2}:{time.Minute:D2}";
             timeService.OnTimeChanges += OnTimeChange;
+        }
 
+        private void InitActivityUI()
+        {
             IScheduleService scheduleService = ServiceLocator.LocateService<IScheduleService>();
             m_ActivityLabel.text = scheduleService.CurrentActivity != null ? scheduleService.CurrentActivity.ActivityName : "No Activity";
             scheduleService.OnActivityChange += OnActivityChange;
-        }
-
-        private void OnDestroy()
-        {
-            ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
-            timeService.OnTimeChanges -= OnTimeChange;
-
-            IScheduleService scheduleService = ServiceLocator.LocateService<IScheduleService>();
-            scheduleService.OnActivityChange -= OnActivityChange;
         }
 
         private void OnTimeChange(DateTime time)

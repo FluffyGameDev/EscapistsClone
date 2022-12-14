@@ -21,14 +21,15 @@ namespace FluffyGameDev.Escapists.World
 
         public event Action<Activity> OnActivityChange;
 
-        private void Start()
+        private void Awake()
         {
+            ServiceLocator.PreRegisterDependency<IScheduleService, ITimeService>();
             ServiceLocator.RegisterService<IScheduleService>(this);
         }
 
         private void OnDestroy()
         {
-            ServiceLocator.UnregisterService<IScheduleService>(this);
+            ServiceLocator.UnregisterService<IScheduleService>();
         }
 
         public void Init()
@@ -40,8 +41,6 @@ namespace FluffyGameDev.Escapists.World
 
         public void Shutdown()
         {
-            ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
-            timeService.OnTimeChanges -= OnTimeChange;
         }
 
         private void OnTimeChange(DateTime time)
