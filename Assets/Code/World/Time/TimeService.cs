@@ -20,6 +20,7 @@ namespace FluffyGameDev.Escapists.World
     public class TimeService : MonoBehaviour, ITimeService
     {
         [SerializeField]
+        [Range(0.001f, 1.0f)]
         private float m_TimeRatio = 1.0f;
 
         private DateTime m_CurrentTime;

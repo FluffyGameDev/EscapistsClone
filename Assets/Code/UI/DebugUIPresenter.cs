@@ -2,6 +2,7 @@ using FluffyGameDev.Escapists.Core;
 using FluffyGameDev.Escapists.InventorySystem;
 using FluffyGameDev.Escapists.Player;
 using FluffyGameDev.Escapists.World;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
@@ -40,6 +41,13 @@ namespace FluffyGameDev.Escapists.UI
             m_DisplayedSlots = new(inventory.slotCount);
             inventory.FilterSlots(slot => true, m_DisplayedSlots);
             m_ListView.itemsSource = m_DisplayedSlots;
+
+            StartCoroutine(InitActivity());
+        }
+
+        private IEnumerator InitActivity()
+        {
+            yield return 0;
 
             ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
             DateTime time = timeService.CurrentTime;

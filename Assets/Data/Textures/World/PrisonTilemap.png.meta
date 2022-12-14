@@ -524,6 +524,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: PrisonTilemap_20
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 160
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c31cff4249fbede4091aa26057470ba4
+      internalID: -501906563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -546,6 +567,7 @@ TextureImporter:
       PrisonTilemap_6: 2030239667
       PrisonTilemap_18: 2027878597
       PrisonTilemap_0: -1781121855
+      PrisonTilemap_20: -501906563
       PrisonTilemap_14: 374393447
       PrisonTilemap_19: 1078475309
       PrisonTilemap_10: -1253601501
