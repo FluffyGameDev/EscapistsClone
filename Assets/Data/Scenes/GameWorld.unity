@@ -360,7 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5542755e3e799e4cabff7856bbf63bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SlotCount: 6
+  m_SlotCount: 3
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
 --- !u!114 &25934476
 MonoBehaviour:
@@ -5390,9 +5390,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0
+    y: 0.0054945056
     width: 1
-    height: 1
+    height: 0.989011
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5588,7 +5588,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1203841708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.5954502, y: -0.8825694, z: -0.1870696}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5626,6 +5626,7 @@ MonoBehaviour:
   m_InventoryHolder: {fileID: 25934475}
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
   m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
+  m_InventorySlot: {fileID: 9197481963319205126, guid: 0d78314de75f4a24b8c1560e7345234d, type: 3}
 --- !u!1 &1588697990
 GameObject:
   m_ObjectHideFlags: 0
@@ -5712,7 +5713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109413107}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.40239874, y: -0.4653589, z: 0.03405638}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

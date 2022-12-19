@@ -17,6 +17,8 @@ namespace FluffyGameDev.Escapists.UI
         private InventoryChannel m_InventoryChannel;
         [SerializeField]
         private PlayerChannel m_PlayerChannel;
+        [SerializeField]
+        private VisualTreeAsset m_InventorySlot;
 
         private Label m_TimeLabel;
         private Label m_ActivityLabel;
@@ -71,25 +73,9 @@ namespace FluffyGameDev.Escapists.UI
 
         private VisualElement MakeListElement()
         {
-            VisualElement listElement = new();
+            VisualElement listElement = m_InventorySlot.CloneTree();
             listElement.pickingMode = PickingMode.Ignore;
             listElement.style.flexDirection = FlexDirection.Row;
-
-            Button dropButton = new();
-            dropButton.name = "bt_DropButton";
-            dropButton.style.width = 32;
-            dropButton.text = "X";
-            listElement.Add(dropButton);
-
-            Button useButton = new();
-            useButton.name = "bt_EquipButton";
-            useButton.text = "Equip";
-            listElement.Add(useButton);
-
-            Label label = new();
-            label.pickingMode = PickingMode.Ignore;
-            listElement.Add(label);
-
             return listElement;
         }
 
@@ -114,9 +100,8 @@ namespace FluffyGameDev.Escapists.UI
             private InventoryChannel m_InventoryChannel;
             private PlayerChannel m_PlayerChannel;
             private InventorySlot m_Slot;
-            private Label m_Label;
-            private Button m_DropButton;
-            private Button m_EquipButton;
+            private VisualElement m_Root;
+            private VisualElement m_Icon;
 
             private ToolItemBehaviour m_ToolBehaviour;
 
@@ -125,21 +110,20 @@ namespace FluffyGameDev.Escapists.UI
                 m_InventoryChannel = inventoryChannel;
                 m_PlayerChannel = playerChannel;
                 m_Slot = slot;
-                m_Label = root.Q<Label>();
-                m_DropButton = root.Q<Button>("bt_DropButton");
-                m_EquipButton = root.Q<Button>("bt_EquipButton");
+
+                m_Root = root;
+                m_Icon = m_Root.Q<VisualElement>("tx_ItemIcon");
+
+                m_Root.RegisterCallback<MouseDownEvent>(OnSlotClick);
 
                 UpdateItem(slot);
                 m_Slot.OnSlotModified += UpdateItem;
-
-                m_DropButton.clicked += OnPressRemoveItem;
-                m_EquipButton.clicked += OnPressEquipItem;
             }
 
             public void Shutdown()
             {
-                m_EquipButton.clicked -= OnPressEquipItem;
-                m_DropButton.clicked -= OnPressRemoveItem;
+                m_Root.UnregisterCallback<MouseDownEvent>(OnSlotClick);
+
                 m_Slot.OnSlotModified -= UpdateItem;
             }
 
@@ -148,23 +132,30 @@ namespace FluffyGameDev.Escapists.UI
                 bool displaySlot = slot.Item != null;
                 m_ToolBehaviour = displaySlot ? slot.Item.FindBehaviour<ToolItemBehaviour>() : null;
 
-                m_EquipButton.style.display = m_ToolBehaviour != null ? DisplayStyle.Flex : DisplayStyle.None;
-                m_DropButton.style.display = displaySlot ? DisplayStyle.Flex : DisplayStyle.None;
-                m_Label.text = displaySlot ? $"{slot.Item.itemName} x {slot.Quantity}" : "No Item";
+                m_Icon.style.backgroundImage = Background.FromSprite(displaySlot ? slot.Item.itemIcon : null);
             }
 
-            private void OnPressRemoveItem()
+            private void OnSlotClick(MouseDownEvent mouseDownEvent)
             {
-                if (m_ToolBehaviour != null)
+                switch (mouseDownEvent.button)
                 {
-                    m_PlayerChannel.RaiseToolEquip(null);
-                }
-                m_InventoryChannel.RaiseItemDrop(m_Slot);
-            }
+                    case 0:
+                    {
+                        m_PlayerChannel.RaiseToolEquip(m_ToolBehaviour);
+                        break;
+                    }
 
-            private void OnPressEquipItem()
-            {
-                m_PlayerChannel.RaiseToolEquip(m_ToolBehaviour);
+                    case 1:
+                        {
+                            if (m_ToolBehaviour != null)
+                            {
+                                m_PlayerChannel.RaiseToolEquip(null);
+                            }
+                            m_InventoryChannel.RaiseItemDrop(m_Slot);
+                        break;
+                    }
+                }
+
             }
         }
     }
