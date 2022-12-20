@@ -20,11 +20,22 @@ namespace FluffyGameDev.Escapists.UI
         [SerializeField]
         private VisualTreeAsset m_InventorySlot;
 
+        [SerializeField]
+        private Stats.StatHolder m_StatHolder;
+        [SerializeField]
+        private Stats.StatDescriptor m_HealthStat;
+        [SerializeField]
+        private Stats.StatDescriptor m_StaminaStat;
+        [SerializeField]
+        private Stats.StatDescriptor m_HeatStat;
+
         private Label m_TimeLabel;
         private Label m_ActivityLabel;
         private ListView m_ListView;
         private List<InventorySlot> m_DisplayedSlots;
         private Dictionary<int, InventorySlotDebugUI> m_DebugUISlots = new();
+
+        private List<StatUIPresenter> m_StatPresenters = new();
 
         private void Start()
         {
@@ -45,7 +56,21 @@ namespace FluffyGameDev.Escapists.UI
 
             ServiceLocator.WaitUntilReady<ITimeService>(InitTimeUI);
             ServiceLocator.WaitUntilReady<IScheduleService>(InitActivityUI);
+
+            m_StatPresenters.Add(new StatUIPresenter(uiDocument.rootVisualElement.Q<Label>("lbl_HealthValue"), m_StatHolder.Stats, m_HealthStat));
+            m_StatPresenters.Add(new StatUIPresenter(uiDocument.rootVisualElement.Q<Label>("lbl_StaminaValue"), m_StatHolder.Stats, m_StaminaStat));
+            m_StatPresenters.Add(new StatUIPresenter(uiDocument.rootVisualElement.Q<Label>("lbl_HeatValue"), m_StatHolder.Stats, m_HeatStat));
         }
+
+        private void OnDestroy()
+        {
+            foreach (StatUIPresenter presenter in m_StatPresenters)
+            {
+                presenter.Shutdown();
+            }
+            m_StatPresenters.Clear();
+        }
+
         private void InitTimeUI()
         {
             ITimeService timeService = ServiceLocator.LocateService<ITimeService>();
@@ -74,7 +99,6 @@ namespace FluffyGameDev.Escapists.UI
         private VisualElement MakeListElement()
         {
             VisualElement listElement = m_InventorySlot.CloneTree();
-            listElement.pickingMode = PickingMode.Ignore;
             listElement.style.flexDirection = FlexDirection.Row;
             return listElement;
         }
@@ -118,12 +142,15 @@ namespace FluffyGameDev.Escapists.UI
 
                 UpdateItem(slot);
                 m_Slot.OnSlotModified += UpdateItem;
+
+                m_PlayerChannel.OnToolEquip += OnToolEquip;
             }
 
             public void Shutdown()
             {
                 m_Root.UnregisterCallback<MouseDownEvent>(OnSlotClick);
 
+                m_PlayerChannel.OnToolEquip -= OnToolEquip;
                 m_Slot.OnSlotModified -= UpdateItem;
             }
 
@@ -132,7 +159,18 @@ namespace FluffyGameDev.Escapists.UI
                 bool displaySlot = slot.Item != null;
                 m_ToolBehaviour = displaySlot ? slot.Item.FindBehaviour<ToolItemBehaviour>() : null;
 
+                if (m_ToolBehaviour == null)
+                {
+                    m_Root.Q("ctr_slot").RemoveFromClassList("selectedItem");
+                }
+
                 m_Icon.style.backgroundImage = Background.FromSprite(displaySlot ? slot.Item.itemIcon : null);
+            }
+
+            private void OnToolEquip(ToolItemBehaviour tool)
+            {
+                bool isToolEquipped = m_ToolBehaviour != null && tool == m_ToolBehaviour;
+                m_Root.Q("ctr_slot").EnableInClassList("selectedItem", isToolEquipped);
             }
 
             private void OnSlotClick(MouseDownEvent mouseDownEvent)
@@ -146,16 +184,54 @@ namespace FluffyGameDev.Escapists.UI
                     }
 
                     case 1:
+                    {
+                        if (m_ToolBehaviour != null)
                         {
-                            if (m_ToolBehaviour != null)
-                            {
-                                m_PlayerChannel.RaiseToolEquip(null);
-                            }
-                            m_InventoryChannel.RaiseItemDrop(m_Slot);
+                            m_PlayerChannel.RaiseToolEquip(null);
+                        }
+                        m_InventoryChannel.RaiseItemDrop(m_Slot);
                         break;
                     }
                 }
 
+            }
+        }
+
+        private class StatUIPresenter
+        {
+            private Label m_ValueLabel;
+            private Stats.Stat m_Stat;
+
+            public StatUIPresenter(Label valueLabel, Stats.StatsContainer statsContainer, Stats.StatData statDescriptor)
+            {
+                m_ValueLabel = valueLabel;
+                m_Stat = statsContainer.GetStat(statDescriptor);
+
+                RefreshStatValue(m_Stat);
+                m_Stat.OnStatChanged += RefreshStatValue;
+            }
+
+            public void Shutdown()
+            {
+                m_Stat.OnStatChanged -= RefreshStatValue;
+            }
+
+            private void RefreshStatValue(Stats.Stat stat)
+            {
+                switch (stat.StatType)
+                {
+                    case Stats.StatType.Integer:
+                    {
+                        m_ValueLabel.text = stat.GetValueInt().ToString();
+                        break;
+                    }
+
+                    case Stats.StatType.Float:
+                    {
+                        m_ValueLabel.text = $"{(int)(stat.GetValueFloat() * 100.0f)} %";
+                        break;
+                    }
+                }
             }
         }
     }

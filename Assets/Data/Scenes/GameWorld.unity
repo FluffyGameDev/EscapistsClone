@@ -141,6 +141,7 @@ GameObject:
   - component: {fileID: 25934475}
   - component: {fileID: 25934476}
   - component: {fileID: 25934477}
+  - component: {fileID: 25934480}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -444,6 +445,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.2, y: 0.1}
   m_EdgeRadius: 0
+--- !u!114 &25934480
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 280defcf432285145abf6964ce1a521a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StatsDescriptors: {fileID: 11400000, guid: c2a60eac27e34f948a765cf7d476293d, type: 2}
 --- !u!1 &435537310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5390,9 +5404,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0054945056
+    y: 0
     width: 1
-    height: 0.989011
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5627,6 +5641,10 @@ MonoBehaviour:
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
   m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
   m_InventorySlot: {fileID: 9197481963319205126, guid: 0d78314de75f4a24b8c1560e7345234d, type: 3}
+  m_StatHolder: {fileID: 25934480}
+  m_HealthStat: {fileID: 11400000, guid: 417b705b0c89b084ca470cc5dbcce785, type: 2}
+  m_StaminaStat: {fileID: 11400000, guid: 3c83fd651764c6c40b99c7583455443a, type: 2}
+  m_HeatStat: {fileID: 11400000, guid: 989b40704d49bbf45a36f29a1c40d3b8, type: 2}
 --- !u!1 &1588697990
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,29 @@
+.unity-list-view__item:hover
+{
+    background-color: rgba(0,0,0,0);
+}
+
+.unity-collection-view__item:hover
+{
+    background-color: rgba(0,0,0,0);
+}
+
+.itemSlot
+{
+    -unity-background-image-tint-color: #92A4FF;
+}
+
+.itemSlot:hover
+{
+    -unity-background-image-tint-color: #D2DAFF;
+}
+
+.itemSlot.selectedItem
+{
+    -unity-background-image-tint-color: #599B5E;
+}
+
+.itemSlot:hover.selectedItem
+{
+    -unity-background-image-tint-color: #A9E7AE;
+}

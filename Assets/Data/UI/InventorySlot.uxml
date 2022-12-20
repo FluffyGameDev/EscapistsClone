@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="ctr_slot" style="width: 48px; height: 48px; background-image: url(&apos;project://database/Assets/Data/Textures/UI/DefaultPanel.png?fileID=21300000&amp;guid=6029a249aa3130f4c92556cb7b58b976&amp;type=3#DefaultPanel&apos;); align-items: center; justify-content: center; -unity-background-image-tint-color: rgba(146, 164, 255, 255);">
+    <ui:VisualElement name="ctr_slot" class="itemSlot" style="width: 48px; height: 48px; background-image: url(&apos;project://database/Assets/Data/Textures/UI/DefaultPanel.png?fileID=21300000&amp;guid=6029a249aa3130f4c92556cb7b58b976&amp;type=3#DefaultPanel&apos;); align-items: center; justify-content: center;">
         <ui:VisualElement name="tx_ItemIcon" picking-mode="Ignore" style="width: 32px; height: 32px; background-image: url(&apos;project://database/Assets/Data/Textures/Items/ItemsSpriteSheet.png?fileID=2016140304&amp;guid=4e446a7d9be94f34ca8800ea325927fb&amp;type=3#ItemsSpriteSheet_1&apos;);" />
     </ui:VisualElement>
 </ui:UXML>
