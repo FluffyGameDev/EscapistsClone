@@ -37,6 +37,7 @@ namespace FluffyGameDev.Escapists.Player
         private void OnUpdateHealth(Stat healthStat)
         {
             m_PlayerStateMachineHolder.blackboard.Set((int)PlayerBB.Health, healthStat.GetValueInt());
+            m_Animator.SetInteger("Health", healthStat.GetValueInt());
         }
 
         private void OnBBSet_IsUsingTool(int bbIndex)
