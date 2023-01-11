@@ -37,7 +37,7 @@ namespace FluffyGameDev.Escapists
             CellData cell = m_CellsData[cellIndex];
             cell.damage += damageAmount;
 
-            if (m_CellsData[cellIndex].damage >= 1)
+            if (cell.damage >= 1)
             {
                 m_TileMap.SetTile(position, m_DestroyedWallTile);
             }

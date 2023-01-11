@@ -26,12 +26,12 @@ namespace FluffyGameDev.Escapists.FSM
             {
                 if (transition.SourceStateID == context.CurrentStateID && transition.CanPerformTransition(context))
                 {
-                    currentState?.OnExit();
+                    currentState?.OnExit(context);
 
                     context.CurrentStateID = transition.DestinationStateID;
                     m_States.TryGetValue(context.CurrentStateID, out currentState);
 
-                    currentState?.OnEnter();
+                    currentState?.OnEnter(context);
                     break;
                 }
             }

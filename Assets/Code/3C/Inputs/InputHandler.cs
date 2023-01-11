@@ -55,7 +55,7 @@ namespace FluffyGameDev.Escapists.Input
 
         public void OnInteract(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started)
+            if (enabled && context.phase == InputActionPhase.Started)
             {
                 Interactable.Interactable bestInteractable = m_Interactor.bestInteractable;
                 if (bestInteractable != null)
@@ -67,7 +67,7 @@ namespace FluffyGameDev.Escapists.Input
 
         public void OnWorldInteract(InputAction.CallbackContext context)
         {
-            if (context.phase == InputActionPhase.Started)
+            if (enabled && context.phase == InputActionPhase.Started)
             {
                 m_WorldChannel.RaiseWorldInteractionRequest(transform.position, m_FacingDirection);
             }

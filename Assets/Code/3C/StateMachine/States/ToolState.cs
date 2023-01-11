@@ -5,19 +5,32 @@ namespace FluffyGameDev.Escapists.Player
 {
     public class ToolState : State
     {
-        public override void OnEnter()
+        private const float AnimationDuration = 2.5f;
+
+        private PlayerChannel m_PlayerChannel;
+
+        public ToolState(PlayerChannel playerChannel)
         {
-            Debug.Log("ToolState.OnEnter");
+            m_PlayerChannel = playerChannel;
         }
 
-        public override void OnExit()
+        public override void OnEnter(StateMachineContext context)
         {
-            Debug.Log("ToolState.OnExit");
+            context.Blackboard.Set((int)PlayerBB.ToolUseStartTime, Time.time);
+        }
+
+        public override void OnExit(StateMachineContext context)
+        {
+            m_PlayerChannel.RaiseToolUseSucceeded();
         }
 
         public override void OnUpdate(StateMachineContext context, float dt)
         {
-            Debug.Log("ToolState.OnUpdate");
+            float startTime = context.Blackboard.Get<float>((int)PlayerBB.ToolUseStartTime);
+            if (Time.time >= startTime + AnimationDuration)
+            {
+                context.Blackboard.Set((int)PlayerBB.IsUsingTool, false);
+            }
         }
     }
 }

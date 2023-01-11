@@ -1,23 +1,21 @@
 using FluffyGameDev.Escapists.FSM;
+using FluffyGameDev.Escapists.Input;
 using UnityEngine;
 
 namespace FluffyGameDev.Escapists.Player
 {
     public class RoamingState : State
     {
-        public override void OnEnter()
+        public override void OnEnter(StateMachineContext context)
         {
-            Debug.Log("RoamingState.OnEnter");
+            GameObject player = context.Blackboard.Get<GameObject>((int)PlayerBB.PlayerGameObject);
+            player.GetComponent<InputHandler>().enabled = true;
         }
 
-        public override void OnExit()
+        public override void OnExit(StateMachineContext context)
         {
-            Debug.Log("RoamingState.OnExit");
-        }
-
-        public override void OnUpdate(StateMachineContext context, float dt)
-        {
-            Debug.Log("RoamingState.OnUpdate");
+            GameObject player = context.Blackboard.Get<GameObject>((int)PlayerBB.PlayerGameObject);
+            player.GetComponent<InputHandler>().enabled = false;
         }
     }
 }

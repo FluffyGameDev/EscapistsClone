@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 25934477}
   - component: {fileID: 25934480}
   - component: {fileID: 25934481}
+  - component: {fileID: 25934482}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -471,9 +472,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6dbadb43b8ce4c94f904b27f17519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Health: 10
+  m_Health: 0
   m_IsUsingTool: 0
   m_CurrentState: 0
+  m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
+--- !u!114 &25934482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 25934466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dad6e32cb0a4a3a43a5bde3e12796e85, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HealthStatDescriptor: {fileID: 11400000, guid: 417b705b0c89b084ca470cc5dbcce785, type: 2}
 --- !u!1 &435537310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5420,9 +5435,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.0018450185
+    y: 0
     width: 1
-    height: 0.99631
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
