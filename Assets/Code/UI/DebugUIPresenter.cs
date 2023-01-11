@@ -29,9 +29,14 @@ namespace FluffyGameDev.Escapists.UI
         [SerializeField]
         private Stats.StatDescriptor m_HeatStat;
 
+        [SerializeField]
+        private PlayerStateMachineHolder m_PlayerStateMachineHolder;
+
         private Label m_TimeLabel;
         private Label m_ActivityLabel;
         private ListView m_ListView;
+        private VisualElement m_ToolProgressContainer;
+        private ProgressBar m_ToolProgressBar;
         private List<InventorySlot> m_DisplayedSlots;
         private Dictionary<int, InventorySlotDebugUI> m_DebugUISlots = new();
 
@@ -45,6 +50,8 @@ namespace FluffyGameDev.Escapists.UI
             m_ListView = uiDocument.rootVisualElement.Q<ListView>();
             m_TimeLabel = uiDocument.rootVisualElement.Q<Label>("lbl_Time");
             m_ActivityLabel = uiDocument.rootVisualElement.Q<Label>("lbl_Activity");
+            m_ToolProgressContainer = uiDocument.rootVisualElement.Q<VisualElement>("ctr_tool");
+            m_ToolProgressBar = uiDocument.rootVisualElement.Q<ProgressBar>("pb_ToolProgress");
 
             m_ListView.makeItem = MakeListElement;
             m_ListView.bindItem = BindElement;
@@ -69,6 +76,11 @@ namespace FluffyGameDev.Escapists.UI
                 presenter.Shutdown();
             }
             m_StatPresenters.Clear();
+        }
+
+        private void Update()
+        {
+            UpdateToolUseBar();
         }
 
         private void InitTimeUI()
@@ -115,6 +127,23 @@ namespace FluffyGameDev.Escapists.UI
             if (m_DebugUISlots.Remove(index, out InventorySlotDebugUI slotDebugUI))
             {
                 slotDebugUI.Shutdown();
+            }
+        }
+
+        private void UpdateToolUseBar()
+        {
+            bool isUsingTool = m_PlayerStateMachineHolder.blackboard.Get<bool>((int)PlayerBB.IsUsingTool);
+            m_ToolProgressContainer.style.display = isUsingTool ? DisplayStyle.Flex : DisplayStyle.None;
+
+            if (isUsingTool)
+            {
+                float startTime = m_PlayerStateMachineHolder.blackboard.Get<float>((int)PlayerBB.ToolUseStartTime);
+                float endTime = m_PlayerStateMachineHolder.blackboard.Get<float>((int)PlayerBB.ToolUseEndTime);
+
+                float duration = endTime - startTime;
+                float progress = (Time.time - startTime) / duration;
+
+                m_ToolProgressBar.value = progress;
             }
         }
 

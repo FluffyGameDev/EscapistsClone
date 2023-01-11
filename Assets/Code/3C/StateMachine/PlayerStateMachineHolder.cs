@@ -38,6 +38,7 @@ namespace FluffyGameDev.Escapists.Player
             playerBB.Set((int)PlayerBB.Health, 10);
             playerBB.Set((int)PlayerBB.IsUsingTool, false);
             playerBB.Set((int)PlayerBB.ToolUseStartTime, 0.0f);
+            playerBB.Set((int)PlayerBB.ToolUseEndTime, 0.0f);
             m_StateMachineContext.Blackboard = playerBB;
 
             m_StateMachine.RegisterState((int)PlayerState.Roaming, new RoamingState());

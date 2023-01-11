@@ -472,9 +472,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64d6dbadb43b8ce4c94f904b27f17519, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Health: 0
-  m_IsUsingTool: 0
-  m_CurrentState: 0
   m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
 --- !u!114 &25934482
 MonoBehaviour:
@@ -5676,6 +5673,7 @@ MonoBehaviour:
   m_HealthStat: {fileID: 11400000, guid: 417b705b0c89b084ca470cc5dbcce785, type: 2}
   m_StaminaStat: {fileID: 11400000, guid: 3c83fd651764c6c40b99c7583455443a, type: 2}
   m_HeatStat: {fileID: 11400000, guid: 989b40704d49bbf45a36f29a1c40d3b8, type: 2}
+  m_PlayerStateMachineHolder: {fileID: 25934481}
 --- !u!1 &1588697990
 GameObject:
   m_ObjectHideFlags: 0

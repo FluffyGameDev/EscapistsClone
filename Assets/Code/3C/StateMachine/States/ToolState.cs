@@ -17,6 +17,7 @@ namespace FluffyGameDev.Escapists.Player
         public override void OnEnter(StateMachineContext context)
         {
             context.Blackboard.Set((int)PlayerBB.ToolUseStartTime, Time.time);
+            context.Blackboard.Set((int)PlayerBB.ToolUseEndTime, Time.time + AnimationDuration);
         }
 
         public override void OnExit(StateMachineContext context)
@@ -26,8 +27,8 @@ namespace FluffyGameDev.Escapists.Player
 
         public override void OnUpdate(StateMachineContext context, float dt)
         {
-            float startTime = context.Blackboard.Get<float>((int)PlayerBB.ToolUseStartTime);
-            if (Time.time >= startTime + AnimationDuration)
+            float endTime = context.Blackboard.Get<float>((int)PlayerBB.ToolUseEndTime);
+            if (Time.time >= endTime)
             {
                 context.Blackboard.Set((int)PlayerBB.IsUsingTool, false);
             }

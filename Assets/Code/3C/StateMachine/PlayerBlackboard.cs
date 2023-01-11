@@ -8,6 +8,7 @@ namespace FluffyGameDev.Escapists.Player
         Health,
         IsUsingTool,
         ToolUseStartTime,
+        ToolUseEndTime,
 
         Count
     }
