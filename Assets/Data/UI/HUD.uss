@@ -8,6 +8,18 @@
     background-color: rgba(0,0,0,0);
 }
 
+.unity-button
+{
+    -unity-background-image-tint-color: #92A4FF;
+}
+
+.unity-button:hover
+{
+    -unity-background-image-tint-color: #D2DAFF;
+}
+
+
+
 .itemSlot
 {
     -unity-background-image-tint-color: #92A4FF;
@@ -26,4 +38,26 @@
 .itemSlot:hover.selectedItem
 {
     -unity-background-image-tint-color: #A9E7AE;
+}
+
+
+
+.craftingSlotInput
+{
+    -unity-background-image-tint-color: #92A4FF;
+}
+
+.craftingSlotInput:hover
+{
+    -unity-background-image-tint-color: #D2DAFF;
+}
+
+.craftingSlotOutput
+{
+    -unity-background-image-tint-color: #92A4FF;
+}
+
+.craftingSlotOutput:hover
+{
+    -unity-background-image-tint-color: #D2DAFF;
 }

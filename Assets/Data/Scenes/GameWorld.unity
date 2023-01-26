@@ -516,9 +516,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 978615837}
+  - {fileID: 1981145371}
   - {fileID: 2048343483}
   - {fileID: 1999494830}
-  - {fileID: 1981145371}
+  - {fileID: 897510057}
+  - {fileID: 1705048057}
   m_Father: {fileID: 1203841709}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -535,10 +537,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UIDocument: {fileID: 1203841710}
-  m_ActivitiesPresenter: {fileID: 978615838}
-  m_InventoryPresenter: {fileID: 1981145372}
-  m_StatsPresenter: {fileID: 2048343484}
-  m_ToolPresenter: {fileID: 1999494831}
 --- !u!1 &435537310
 GameObject:
   m_ObjectHideFlags: 0
@@ -5657,6 +5655,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &897510056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 897510057}
+  - component: {fileID: 897510058}
+  m_Layer: 0
+  m_Name: HUDButtonsPresenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &897510057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897510056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 250075273}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &897510058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 897510056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 656f82372fdc78047aed498266fa14a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HUDController: {fileID: 250075274}
+  m_RootElementName: ctr_Buttons
+  m_HUDChannel: {fileID: 11400000, guid: 74a2b1386482f224888d91f6781cfa68, type: 2}
 --- !u!1 &978615836
 GameObject:
   m_ObjectHideFlags: 0
@@ -5701,6 +5746,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bcfce6feacfe134882b90f9d35e5dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HUDController: {fileID: 250075274}
+  m_RootElementName: ctr_activity
 --- !u!1 &1203841708
 GameObject:
   m_ObjectHideFlags: 0
@@ -5795,6 +5842,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1705048056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1705048057}
+  - component: {fileID: 1705048058}
+  m_Layer: 0
+  m_Name: CraftingWindowPresenter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1705048057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705048056}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 250075273}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1705048058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1705048056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25dd59aed09eeec4c94b8be34857701a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HUDController: {fileID: 250075274}
+  m_RootElementName: ctr_Crafting
+  m_HUDChannel: {fileID: 11400000, guid: 74a2b1386482f224888d91f6781cfa68, type: 2}
 --- !u!1 &1981145370
 GameObject:
   m_ObjectHideFlags: 0
@@ -5825,7 +5919,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 250075273}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1981145372
 MonoBehaviour:
@@ -5839,6 +5933,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5451f094623254c458fce2436c9306c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HUDController: {fileID: 250075274}
+  m_RootElementName: ctr_inventory
   m_InventoryHolder: {fileID: 25934475}
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
   m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
@@ -5873,7 +5969,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 250075273}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1999494831
 MonoBehaviour:
@@ -5887,6 +5983,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3bb159137f7528d429ea169713956e64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HUDController: {fileID: 250075274}
+  m_RootElementName: ctr_tool
   m_PlayerStateMachineHolder: {fileID: 25934481}
 --- !u!1 &2048343482
 GameObject:
@@ -5918,7 +6016,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 250075273}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2048343484
 MonoBehaviour:
@@ -5932,6 +6030,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee8e524ba5966bb44826e8660849e05c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_HUDController: {fileID: 250075274}
+  m_RootElementName: ctr_Stats
   m_StatHolder: {fileID: 25934480}
   m_HealthStat: {fileID: 11400000, guid: 417b705b0c89b084ca470cc5dbcce785, type: 2}
   m_StaminaStat: {fileID: 11400000, guid: 3c83fd651764c6c40b99c7583455443a, type: 2}

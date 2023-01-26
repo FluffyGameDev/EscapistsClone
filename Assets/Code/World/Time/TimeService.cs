@@ -61,7 +61,7 @@ namespace FluffyGameDev.Escapists.World
 
         public void Init()
         {
-            m_RawTime = 6 * 60; //TODO: remove Magic number
+            m_RawTime = 7 * 60; //TODO: remove Magic number
             m_CurrentTime = new()
             {
                 Minute = m_RawTime % 60,

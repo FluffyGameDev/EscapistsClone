@@ -1,0 +1,17 @@
+{
+    "name": "FluffyGameDev.Escapists.CraftingSystem",
+    "rootNamespace": "FluffyGameDev.Escapists.Crafting",
+    "references": [
+        "GUID:115be96b7b38c7b43b4363f39b5b1dbe",
+        "GUID:9b2b28793fdaabc46bf407b4eb2b59c8"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

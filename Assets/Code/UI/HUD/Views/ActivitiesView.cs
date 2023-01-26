@@ -1,4 +1,3 @@
-using FluffyGameDev.Escapists.Core;
 using FluffyGameDev.Escapists.World;
 using UnityEngine.UIElements;
 
@@ -17,7 +16,7 @@ namespace FluffyGameDev.Escapists.UI
 
         public void UpdateTime(DateTime time)
         {
-            m_TimeLabel.text = $"Day {time.Day}: {time.Hour:D2}:{time.Minute:D2}";
+            m_TimeLabel.text = $"Day {time.Day} - {time.Hour:D2}:{time.Minute:D2}";
         }
 
         public void UpdateActivity(Activity activity)

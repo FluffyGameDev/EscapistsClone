@@ -8,20 +8,16 @@ namespace FluffyGameDev.Escapists.UI
 
         public void Display()
         {
-            if (root.style.display == DisplayStyle.None)
-            {
-                root.style.display = DisplayStyle.Flex;
-                OnDisplay();
-            }
+            root.style.display = DisplayStyle.Flex;
+            root.style.visibility = Visibility.Visible;
+            OnDisplay();
         }
 
         public void Hide()
         {
-            if (root.style.display == DisplayStyle.Flex)
-            {
-                root.style.display = DisplayStyle.None;
-                OnHide();
-            }
+            root.style.display = DisplayStyle.None;
+            root.style.visibility = Visibility.Hidden;
+            OnHide();
         }
 
 
