@@ -8,6 +8,7 @@ namespace FluffyGameDev.Escapists.InventorySystem
     {
         public string itemName; // TODO: localization
         public Sprite itemIcon; // TODO: Use Addressable key
+        public int itemID; // TODO: Use Addressable key
 
         public void AddBehaviour(InventoryItemBehaviour addedBehaviour)
         {

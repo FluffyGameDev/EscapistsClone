@@ -15,12 +15,18 @@ namespace FluffyGameDev.Escapists.InventorySystem
         public Sprite itemIcon => m_ItemIcon;
 
         [SerializeField]
+        private int m_ItemID; //TODO: auto generate IDs
+        public int itemID => m_ItemID;
+
+
+        [SerializeField]
         private List<InventoryItemBehaviourCreator> m_behaviourCreators = new();
         public List<InventoryItemBehaviourCreator> behaviourCreators => m_behaviourCreators;
 
         public InventoryItem CreateItem()
         {
             InventoryItem item = new();
+            item.itemID = m_ItemID;
             item.itemName = m_ItemName;
             item.itemIcon = m_ItemIcon;
 

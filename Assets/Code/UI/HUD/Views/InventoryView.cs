@@ -55,8 +55,8 @@ namespace FluffyGameDev.Escapists.UI
             private VisualElement m_Root;
             private VisualElement m_Icon;
 
-            public event Action onEquip;
-            public event Action onDrop;
+            public event Action onMainAction;
+            public event Action onSecondaryAction;
 
             public InventorySlotView(VisualElement root)
             {
@@ -94,13 +94,13 @@ namespace FluffyGameDev.Escapists.UI
                 {
                     case 0:
                     {
-                        onEquip?.Invoke();
+                        onMainAction?.Invoke();
                         break;
                     }
 
                     case 1:
                     {
-                        onDrop?.Invoke();
+                        onSecondaryAction?.Invoke();
                         break;
                     }
                 }

@@ -14,15 +14,25 @@ namespace FluffyGameDev.Escapists.Crafting
 
     public class CraftingService : MonoBehaviour, ICraftingService
     {
+        private class CraftingRecipe
+        {
+            public CraftingRecipeData dataSource;
+            public List<int> itemIDs = new();
+            public int requiredIntelligence;
+        }
+
         [SerializeField]
         private CraftingRecipeDatabase m_Database;
 
-        private List<CraftingRecipeData> m_KnownRecipes = new();
+        [SerializeField]
+        private CraftingChannel m_CraftingChannel;
 
+        private List<CraftingRecipe> m_AllRecipes = new();
+        private List<CraftingRecipeData> m_KnownRecipes = new();
 
         public List<CraftingRecipeData> knownRecipes => m_KnownRecipes;
 
-        private void Awake()
+        private void Start()
         {
             ServiceLocator.RegisterService<ICraftingService>(this);
         }
@@ -34,9 +44,7 @@ namespace FluffyGameDev.Escapists.Crafting
 
         public void Init()
         {
-            //TODO
-            // Build simplified crafting recipe structures
-            // They must have items sorted by ID
+            BakeRecipes();
 
             //TODO: access player stats
         }
@@ -47,22 +55,67 @@ namespace FluffyGameDev.Escapists.Crafting
 
         public CraftingRecipeData FindMatchingRecipe(List<InventoryItem> items)
         {
-            //TODO: Sort items by ID
-            return m_Database.recipes.Find(recipe => DoesRecipeMatch(recipe, items));
+            List<int> itemIDs = new();
+            foreach (var item in items)
+            {
+                if (item!= null)
+                {
+                    itemIDs.Add(item.itemID);
+                }
+            }
+            itemIDs.Sort();
+
+            CraftingRecipe foundRecipe = m_AllRecipes.Find(recipe => DoesRecipeMatch(recipe, itemIDs));
+            return foundRecipe != null ? foundRecipe.dataSource : null;
         }
 
         public void TryCraftRecipe(CraftingRecipeData recipe)
         {
-            //TODO
-            //Check stats
-            //  if ok, create the item and send success event
-            //  if not, send fail event
+            if (true) //TODO: chack stats
+            {
+                InventoryItem createdItem = recipe.outputItem.CreateItem();
+                m_CraftingChannel.RaiseCraftSucceeded(createdItem);
+            }
+            else
+            {
+                m_CraftingChannel.RaiseCraftFailed();
+            }
         }
 
-        private static bool DoesRecipeMatch(CraftingRecipeData recipe, List<InventoryItem> items)
+        private static bool DoesRecipeMatch(CraftingRecipe recipe, List<int> itemIDs)
         {
-            // for each item in both, check if equal
+            if (recipe.itemIDs.Count == itemIDs.Count)
+            {
+                for (int i = 0; i < recipe.itemIDs.Count; ++i)
+                {
+                    if (itemIDs[i] != recipe.itemIDs[i])
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
             return false;
+        }
+
+        private void BakeRecipes()
+        {
+            m_AllRecipes = m_Database.recipes.ConvertAll(recipe => BakeRecipe(recipe));
+        }
+
+        private CraftingRecipe BakeRecipe(CraftingRecipeData data)
+        {
+            CraftingRecipe craftingRecipe = new();
+
+            foreach (var item in data.requiredItems)
+            {
+                craftingRecipe.itemIDs.Add(item.itemID);
+            }
+            craftingRecipe.itemIDs.Sort();
+
+            craftingRecipe.dataSource = data;
+            craftingRecipe.requiredIntelligence = data.requiredIntelligence;
+            return craftingRecipe;
         }
     }
 }

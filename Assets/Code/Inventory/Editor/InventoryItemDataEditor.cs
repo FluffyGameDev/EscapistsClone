@@ -43,10 +43,12 @@ namespace FluffyGameDev.Escapists.InventorySystem.Editor
 
         void OnDrawItemPropertiesGUI()
         {
-            SerializedProperty serializedProperty = serializedObject.FindProperty("m_ItemIcon");
+            SerializedProperty iconProperty = serializedObject.FindProperty("m_ItemIcon");
+            SerializedProperty idProperty = serializedObject.FindProperty("m_ItemID");
 
             serializedObject.Update();
-            EditorGUILayout.PropertyField(serializedProperty);
+            EditorGUILayout.PropertyField(iconProperty);
+            EditorGUILayout.PropertyField(idProperty);
             serializedObject.ApplyModifiedProperties();
         }
 

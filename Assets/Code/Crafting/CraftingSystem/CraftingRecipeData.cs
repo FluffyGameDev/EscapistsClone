@@ -10,9 +10,12 @@ namespace FluffyGameDev.Escapists.Crafting
         [SerializeField]
         private List<InventoryItemData> m_RequiredItems;
         [SerializeField]
+        private InventoryItemData m_OutputItem;
+        [SerializeField]
         private int m_RequiredIntelligence;
 
         public List<InventoryItemData> requiredItems => m_RequiredItems;
+        public InventoryItemData outputItem => m_OutputItem;
         public int requiredIntelligence => m_RequiredIntelligence;
     }
 }
