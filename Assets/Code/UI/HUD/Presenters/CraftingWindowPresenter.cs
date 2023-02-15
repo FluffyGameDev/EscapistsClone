@@ -56,6 +56,11 @@ namespace FluffyGameDev.Escapists.UI
             m_HUDChannel.onRequestCraftingWindow -= OnToggleView;
         }
 
+        private void Update()
+        {
+            view.UpdateErrorDisplay();
+        }
+
         private void OnToggleView()
         {
             m_IsOpen = !m_IsOpen;
@@ -138,7 +143,7 @@ namespace FluffyGameDev.Escapists.UI
             }
             else
             {
-                //TODO: show error
+                view.DisplayErrorMessage(CraftingWindowError.InvalidRecipe, 0);
             }
         }
 
@@ -154,9 +159,9 @@ namespace FluffyGameDev.Escapists.UI
             view.UpdateOutputSlot(m_OutputSlot);
         }
 
-        private void OnCraftingFailure()
+        private void OnCraftingFailure(int missingIntellect)
         {
-            //TODO: show error
+            view.DisplayErrorMessage(CraftingWindowError.InsufficientIntelligence, missingIntellect);
         }
     }
 }

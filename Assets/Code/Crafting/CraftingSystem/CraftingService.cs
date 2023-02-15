@@ -1,5 +1,6 @@
 using FluffyGameDev.Escapists.Core;
 using FluffyGameDev.Escapists.InventorySystem;
+using FluffyGameDev.Escapists.Stats;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -27,6 +28,9 @@ namespace FluffyGameDev.Escapists.Crafting
         [SerializeField]
         private CraftingChannel m_CraftingChannel;
 
+        [SerializeField]
+        private StatDescriptor m_IntellectStat;
+
         private List<CraftingRecipe> m_AllRecipes = new();
         private List<CraftingRecipeData> m_KnownRecipes = new();
 
@@ -45,8 +49,6 @@ namespace FluffyGameDev.Escapists.Crafting
         public void Init()
         {
             BakeRecipes();
-
-            //TODO: access player stats
         }
 
         public void Shutdown()
@@ -71,14 +73,21 @@ namespace FluffyGameDev.Escapists.Crafting
 
         public void TryCraftRecipe(CraftingRecipeData recipe)
         {
-            if (true) //TODO: chack stats
+            if (!m_KnownRecipes.Contains(recipe))
+            {
+                m_KnownRecipes.Add(recipe);
+            }
+
+            StatsContainer stats = ServiceLocator.LocateService<IPlayerStatsService>().PlayerStatsContainer;
+            Stat intellectStat = stats.GetStat(m_IntellectStat);
+            if (intellectStat.GetValueInt() >= recipe.requiredIntelligence)
             {
                 InventoryItem createdItem = recipe.outputItem.CreateItem();
                 m_CraftingChannel.RaiseCraftSucceeded(createdItem);
             }
             else
             {
-                m_CraftingChannel.RaiseCraftFailed();
+                m_CraftingChannel.RaiseCraftFailed(recipe.requiredIntelligence - intellectStat.GetValueInt());
             }
         }
 

@@ -8,16 +8,16 @@ namespace FluffyGameDev.Escapists.Crafting
     public class CraftingChannel : ScriptableObject
     {
         public event Action<InventoryItem> onCraftSucceeded;
-        public event Action onCraftFailed;
+        public event Action<int> onCraftFailed;
 
         public void RaiseCraftSucceeded(InventoryItem item)
         {
             onCraftSucceeded?.Invoke(item);
         }
 
-        public void RaiseCraftFailed()
+        public void RaiseCraftFailed(int missingIntellect)
         {
-            onCraftFailed?.Invoke();
+            onCraftFailed?.Invoke(missingIntellect);
         }
     }
 }

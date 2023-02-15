@@ -1,12 +1,21 @@
 using FluffyGameDev.Escapists.InventorySystem;
 using System;
 using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.UIElements;
 
 namespace FluffyGameDev.Escapists.UI
 {
+    public enum CraftingWindowError
+    {
+        InvalidRecipe,
+        InsufficientIntelligence
+    }
+
     public class CraftingWindowView : HUDElementView
     {
+        private const float k_ErrorDuration = 2.0f;
+
         public event Action onCraftRequest;
         public event Action<int> onEmptyInputSlotRequest;
         public event Action onEmptyOutputSlotRequest;
@@ -14,6 +23,10 @@ namespace FluffyGameDev.Escapists.UI
         private List<VisualElement> m_InputSlots = new();
         private VisualElement m_OutputSlot;
         private VisualElement m_CraftButton;
+        private VisualElement m_ErrorContainer;
+        private Label m_ErrorLabel;
+
+        private float m_ErrorEndTime;
 
         public override void Init()
         {
@@ -22,6 +35,8 @@ namespace FluffyGameDev.Escapists.UI
             m_InputSlots.Add(root.Q<VisualElement>("ctr_Slot3"));
             m_OutputSlot = root.Q<VisualElement>("ctr_SlotResult");
             m_CraftButton = root.Q<VisualElement>("btn_Craft");
+            m_ErrorContainer = root.Q<VisualElement>("ctr_Error");
+            m_ErrorLabel = root.Q<Label>("lbl_Error");
 
             foreach (var slotElement in m_InputSlots)
             {
@@ -43,6 +58,29 @@ namespace FluffyGameDev.Escapists.UI
             m_InputSlots.Clear();
             m_OutputSlot = null;
             m_CraftButton = null;
+        }
+
+        public void DisplayErrorMessage(CraftingWindowError error, int parameter)
+        {
+            m_ErrorEndTime = Time.time + k_ErrorDuration;
+            m_ErrorContainer.visible = true;
+            m_ErrorContainer.style.display = DisplayStyle.Flex;
+
+            m_ErrorLabel.text = error switch
+            {
+                CraftingWindowError.InvalidRecipe => "This recipe does not exist!", //TODO: localize
+                CraftingWindowError.InsufficientIntelligence => $"You need {parameter} more Intellect to craft this item!",
+                _ => string.Empty
+            };
+        }
+
+        public void UpdateErrorDisplay()
+        {
+            if (m_ErrorContainer.visible && Time.time >= m_ErrorEndTime)
+            {
+                m_ErrorContainer.visible = false;
+                m_ErrorContainer.style.display = DisplayStyle.None;
+            }
         }
 
         public void UpdateInputSlots(List<InventorySlot> inputSlots)
