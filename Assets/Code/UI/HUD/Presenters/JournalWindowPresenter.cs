@@ -18,11 +18,15 @@ namespace FluffyGameDev.Escapists.UI
         {
             view.RecipeVisualAsset = m_RecipeVisualAsset;
             m_HUDChannel.onRequestJournalWindow += OnToggleView;
+            m_HUDChannel.onRequestCraftingWindow += Close;
+            m_HUDChannel.onRequestProfileWindow += Close;
         }
 
         protected override void OnShutdown()
         {
             m_HUDChannel.onRequestJournalWindow -= OnToggleView;
+            m_HUDChannel.onRequestCraftingWindow -= Close;
+            m_HUDChannel.onRequestProfileWindow -= Close;
         }
 
         private void OnToggleView()
@@ -37,6 +41,12 @@ namespace FluffyGameDev.Escapists.UI
             {
                 view.Hide();
             }
+        }
+
+        private void Close()
+        {
+            m_IsOpen = false;
+            view.Hide();
         }
     }
 }

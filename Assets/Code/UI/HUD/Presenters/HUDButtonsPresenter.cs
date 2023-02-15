@@ -11,12 +11,14 @@ namespace FluffyGameDev.Escapists.UI
         {
             view.onRequestOpenCraft += m_HUDChannel.RaiseRequestCraftingWindow;
             view.onRequestOpenJournal += m_HUDChannel.RaiseRequestJournalWindow;
+            view.onRequestOpenProfile += m_HUDChannel.RaiseRequestProfileWindow;
         }
 
         protected override void OnShutdown()
         {
             view.onRequestOpenCraft -= m_HUDChannel.RaiseRequestCraftingWindow;
             view.onRequestOpenJournal -= m_HUDChannel.RaiseRequestJournalWindow;
+            view.onRequestOpenProfile -= m_HUDChannel.RaiseRequestProfileWindow;
         }
     }
 }

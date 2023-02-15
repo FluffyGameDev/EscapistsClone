@@ -61,3 +61,17 @@
 {
     -unity-background-image-tint-color: #D2DAFF;
 }
+
+.stat-bar .unity-progress-bar__container {
+    min-height: 10px;
+    max-height: 10px;
+}
+
+.stat-bar .unity-progress-bar__background {
+    background-color : #92A4FF;
+    border-color: #4C50E9;
+}
+
+.stat-bar .unity-progress-bar__progress {
+    background-color : #4C50E9;
+}

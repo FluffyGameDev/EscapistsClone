@@ -33,6 +33,8 @@ namespace FluffyGameDev.Escapists.UI
             m_OutputSlot = new();
 
             m_HUDChannel.onRequestCraftingWindow += OnToggleView;
+            m_HUDChannel.onRequestJournalWindow += Close;
+            m_HUDChannel.onRequestProfileWindow += Close;
 
             m_CraftingChannel.onCraftSucceeded += OnCraftingSuccess;
             m_CraftingChannel.onCraftFailed += OnCraftingFailure;
@@ -54,6 +56,8 @@ namespace FluffyGameDev.Escapists.UI
             m_CraftingChannel.onCraftSucceeded -= OnCraftingSuccess;
 
             m_HUDChannel.onRequestCraftingWindow -= OnToggleView;
+            m_HUDChannel.onRequestJournalWindow -= Close;
+            m_HUDChannel.onRequestProfileWindow -= Close;
         }
 
         private void Update()
@@ -88,6 +92,12 @@ namespace FluffyGameDev.Escapists.UI
 
                 EmptyOutputSlot();
             }
+        }
+
+        private void Close()
+        {
+            m_IsOpen = false;
+            view.Hide();
         }
 
         private void OnAddItem(InventoryItem item)

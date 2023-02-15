@@ -8,6 +8,7 @@ namespace FluffyGameDev.Escapists.UI
     {
         public event Action onRequestCraftingWindow;
         public event Action onRequestJournalWindow;
+        public event Action onRequestProfileWindow;
         public event Action<InventoryActionStrategy> onRequestInventoryActionStrategy;
 
         public void RaiseRequestCraftingWindow()
@@ -18,6 +19,11 @@ namespace FluffyGameDev.Escapists.UI
         public void RaiseRequestJournalWindow()
         {
             onRequestJournalWindow?.Invoke();
+        }
+
+        public void RaiseRequestProfileWindow()
+        {
+            onRequestProfileWindow?.Invoke();
         }
 
         public void RaiseRequestInventoryActionStrategy(InventoryActionStrategy strategy)
