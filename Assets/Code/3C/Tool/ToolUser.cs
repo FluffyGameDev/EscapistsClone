@@ -14,6 +14,8 @@ namespace FluffyGameDev.Escapists.Tool
         private PlayerChannel m_PlayerChannel;
         [SerializeField]
         private WorldChannel m_WorldChannel;
+        [SerializeField]
+        private ToolUsedGameplayEvent m_ToolUsedGameplayEvent;
 
         private PlayerStateMachineHolder m_StateMachineHolder;
         private WorldDataHolder m_CurrentWorldDataHolder;
@@ -59,6 +61,9 @@ namespace FluffyGameDev.Escapists.Tool
             if (m_CurrentTool != null)
             {
                 m_CurrentTool.UseTool(m_CurrentWorldDataHolder, m_CurrentInteractionPosition);
+
+                m_ToolUsedGameplayEvent?.RaiseEvent(m_CurrentTool, m_CurrentWorldDataHolder.GetTileAtPosition(m_CurrentInteractionPosition));
+
                 m_CurrentWorldDataHolder = null;
 
                 DurabilityItemBehaviour durabilityBehaviour = m_CurrentTool.owner.FindBehaviour<DurabilityItemBehaviour>();

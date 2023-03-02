@@ -381,6 +381,7 @@ MonoBehaviour:
   m_InventoryChannel: {fileID: 11400000, guid: 625de034523d70648a8c9bad1e26d21d, type: 2}
   m_PlayerChannel: {fileID: 11400000, guid: e3c0a5244a6757049a6167cfe6f9760e, type: 2}
   m_WorldChannel: {fileID: 11400000, guid: fe1764f05285f684d993aa08405522fc, type: 2}
+  m_ToolUsedGameplayEvent: {fileID: 11400000, guid: 65ba24f377faeee478cc1407d5bca29d, type: 2}
 --- !u!95 &25934477
 Animator:
   serializedVersion: 5
@@ -5561,9 +5562,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.051495016
+    y: 0.07131538
     width: 1
-    height: 0.89700997
+    height: 0.8557845
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -6274,6 +6275,7 @@ GameObject:
   - component: {fileID: 2109413108}
   - component: {fileID: 2109413111}
   - component: {fileID: 2109413112}
+  - component: {fileID: 2109413113}
   m_Layer: 0
   m_Name: WorldServices
   m_TagString: Untagged
@@ -6362,6 +6364,19 @@ MonoBehaviour:
     m_ActivityName: Return To Cell
   - m_StartTime: 22
     m_ActivityName: Sleepy Time
+--- !u!114 &2109413113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109413107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f2106fb40b3ccc4eb07e6335e1aa2aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_DebugBlueprint: {fileID: 11400000, guid: 54191bfeb573e1148b5a224f8caadab2, type: 2}
 --- !u!1 &2119437482
 GameObject:
   m_ObjectHideFlags: 0

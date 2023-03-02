@@ -44,5 +44,10 @@ namespace FluffyGameDev.Escapists
 
             m_CellsData[cellIndex] = cell;
         }
+
+        public TileBase GetTileAtPosition(Vector3Int position)
+        {
+            return m_TileMap.GetTile(position);
+        }
     }
 }

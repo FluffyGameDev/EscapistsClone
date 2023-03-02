@@ -1,0 +1,16 @@
+{
+    "name": "FluffyGameDev.Escapists.QuestSystem",
+    "rootNamespace": "FluffyGameDev.Escapists.Quest",
+    "references": [
+        "GUID:115be96b7b38c7b43b4363f39b5b1dbe"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
