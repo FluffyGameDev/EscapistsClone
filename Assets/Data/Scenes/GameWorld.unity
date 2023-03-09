@@ -5562,9 +5562,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.07131538
+    y: 0
     width: 1
-    height: 0.8557845
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 34
@@ -5672,6 +5672,7 @@ MonoBehaviour:
   m_RootElementName: ctr_Journal
   m_HUDChannel: {fileID: 11400000, guid: 74a2b1386482f224888d91f6781cfa68, type: 2}
   m_RecipeVisualAsset: {fileID: 9197481963319205126, guid: 48ee8fdc92ba98a4ead07c4020918ad2, type: 3}
+  m_QuestVisualAsset: {fileID: 9197481963319205126, guid: 2466a4eca2bda1246b61732f83b99161, type: 3}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -6376,7 +6377,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2106fb40b3ccc4eb07e6335e1aa2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DebugBlueprint: {fileID: 11400000, guid: 54191bfeb573e1148b5a224f8caadab2, type: 2}
 --- !u!1 &2119437482
 GameObject:
   m_ObjectHideFlags: 0

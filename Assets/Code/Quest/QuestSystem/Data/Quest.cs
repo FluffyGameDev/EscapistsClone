@@ -20,12 +20,16 @@ namespace FluffyGameDev.Escapists.Quest
 
         private QuestObjective m_RootObjective;
 
+        private string m_QuestName; //TODO: localize
+        public string QuestName => m_QuestName;
+
         // TODO: rewards
 
-        public Quest(QuestObjective root)
+        public Quest(QuestObjective root, string questName)
         {
             m_Status = QuestStatus.Pending;
             m_RootObjective = root;
+            m_QuestName = questName;
         }
 
         public void BeginQuest()

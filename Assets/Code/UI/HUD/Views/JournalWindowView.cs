@@ -1,5 +1,4 @@
 using FluffyGameDev.Escapists.Crafting;
-using System;
 using System.Collections.Generic;
 using UnityEngine.UIElements;
 
@@ -7,105 +6,74 @@ namespace FluffyGameDev.Escapists.UI
 {
     public class JournalWindowView : HUDElementView
     {
-        private const int k_RecipesPerPage = 2;
+        private JournalCraftingTabView m_CraftingView;
+        private JournalQuestTabView m_QuestView;
 
-        public List<CraftingRecipeData> Recipes { get; set; }
-        public VisualTreeAsset RecipeVisualAsset { get; set; }
 
-        private int m_CurrentPage;
-        private int m_MaxPage;
-        private List<CraftingRecipeData> m_DisplayedRecipes = new(k_RecipesPerPage);
+        public VisualTreeAsset RecipeVisualAsset
+        {
+            get => m_CraftingView.RecipeVisualAsset;
+            set => m_CraftingView.RecipeVisualAsset = value;
+        }
 
-        private ListView m_RecipeListView;
-        private Label m_PageNumberLabel;
-        private Button m_PrevPageButton;
-        private Button m_NextPageButton;
+        public List<CraftingRecipeData> Recipes
+        {
+            get => m_CraftingView.Recipes;
+            set => m_CraftingView.Recipes = value;
+        }
+
+        public VisualTreeAsset QuestVisualAsset
+        {
+            get => m_QuestView.QuestVisualAsset;
+            set => m_QuestView.QuestVisualAsset = value;
+        }
+
+        public List<Quest.Quest> ActiveQuest
+        {
+            get => m_QuestView.ActiveQuest;
+            set => m_QuestView.ActiveQuest = value;
+        }
 
         public override void Init()
         {
-            m_RecipeListView = root.Q<ListView>("lst_Recipes");
-            m_PageNumberLabel = root.Q<Label>("lbl_PageNumber");
-            m_PrevPageButton = root.Q<Button>("btn_PageLeft");
-            m_NextPageButton = root.Q<Button>("btn_PageRight");
+            m_CraftingView = new JournalCraftingTabView(root.Q("ctr_CraftingNotes"));
+            m_CraftingView.Init();
 
-            m_RecipeListView.makeItem = MakeRecipeElement;
-            m_RecipeListView.bindItem = BindRecipeElement;
-            m_PrevPageButton.clicked += OnPagePrev;
-            m_NextPageButton.clicked += OnPageNext;
+            m_QuestView = new JournalQuestTabView(root.Q("ctr_QuestLog"));
+            m_QuestView.Init();
+
+            root.Q("bt_CraftingTab").RegisterCallback<MouseDownEvent>(OnCraftingTabMouseDown);
+            root.Q("bt_QuestTab").RegisterCallback<MouseDownEvent>(OnQuestTabMouseDown);
         }
 
         public override void Shutdown()
         {
-            m_PrevPageButton.clicked -= OnPagePrev;
-            m_NextPageButton.clicked -= OnPageNext;
+            m_QuestView.Shutdown();
+            m_CraftingView.Shutdown();
         }
 
         protected override void OnDisplay()
         {
-            m_CurrentPage = 0;
-            m_MaxPage = Math.Max((Recipes.Count - 1) / k_RecipesPerPage, 0);
-
-            m_RecipeListView.itemsSource = m_DisplayedRecipes;
-            RefreshRecipeList();
-            RefreshPageNumber();
+            m_CraftingView.Display();
+            m_QuestView.Hide();
         }
 
-        private void RefreshRecipeList()
+        protected override void OnHide()
         {
-            m_DisplayedRecipes.Clear();
-
-            int startIndex = m_CurrentPage * k_RecipesPerPage;
-            int maxIndex = Math.Min(startIndex + k_RecipesPerPage, Recipes.Count);
-            for (int i = startIndex; i < maxIndex; ++i)
-            {
-                m_DisplayedRecipes.Add(Recipes[i]);
-            }
-
-            m_RecipeListView.RefreshItems();
+            m_CraftingView.Hide();
+            m_QuestView.Hide();
         }
 
-        private void RefreshPageNumber()
+        private void OnCraftingTabMouseDown(MouseDownEvent e)
         {
-            m_PageNumberLabel.text = $"{m_CurrentPage + 1}/{m_MaxPage + 1}";
+            m_CraftingView.Display();
+            m_QuestView.Hide();
         }
 
-        private void OnPagePrev()
+        private void OnQuestTabMouseDown(MouseDownEvent e)
         {
-            if (m_CurrentPage > 0)
-            {
-                --m_CurrentPage;
-            }
-
-            RefreshPageNumber();
-            RefreshRecipeList();
-        }
-
-        private void OnPageNext()
-        {
-            if (m_CurrentPage < m_MaxPage)
-            {
-                ++m_CurrentPage;
-            }
-
-            RefreshPageNumber();
-            RefreshRecipeList();
-        }
-
-        private VisualElement MakeRecipeElement()
-        {
-            return RecipeVisualAsset.CloneTree();
-        }
-
-        private void BindRecipeElement(VisualElement element, int index)
-        {
-            CraftingRecipeData recipe = m_DisplayedRecipes[index];
-            VisualElement icon = element.Q<VisualElement>("ctr_Icon");
-            Label itemName = element.Q<Label>("lbl_ItemName");
-            Label ingredients = element.Q<Label>("lbl_Ingredients");
-
-            icon.style.backgroundImage = Background.FromSprite(recipe.outputItem.itemIcon);
-            itemName.text = recipe.outputItem.itemName;
-            ingredients.text = string.Join(", ", recipe.requiredItems.ConvertAll(item => item.itemName));
+            m_QuestView.Display();
+            m_CraftingView.Hide();
         }
     }
 }
