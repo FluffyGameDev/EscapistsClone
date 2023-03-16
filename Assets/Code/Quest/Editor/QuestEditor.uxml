@@ -1,0 +1,18 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:Template name="QuestObjective" src="project://database/Assets/Code/Quest/Editor/QuestEditor/QuestObjective.uxml?fileID=9197481963319205126&amp;guid=181c4a9d82a94b144a6a86e02aed0f1e&amp;type=3#QuestObjective" />
+    <Style src="project://database/Assets/Code/Quest/Editor/QuestEditor/QuestEditor.uss?fileID=7433441132597879392&amp;guid=b1f0e340d11874e46b078f3f141a4697&amp;type=3#QuestEditor" />
+    <ui:VisualElement picking-mode="Ignore" class="quest-editor">
+        <ui:ScrollView picking-mode="Ignore" name="ctr_EditionPanel" class="quest-edition-panel">
+            <ui:Label text="Quest Information:" />
+            <ui:VisualElement picking-mode="Ignore" class="quest-edition-panel__header">
+                <ui:TextField picking-mode="Ignore" label="Quest Name" binding-path="m_QuestName" />
+            </ui:VisualElement>
+            <ui:Label text="Objectives:" />
+            <ui:Instance template="QuestObjective" name="ctr_RootObjective" class="quest-objective--root" />
+        </ui:ScrollView>
+        <ui:VisualElement picking-mode="Ignore" class="quest-toolbox">
+            <ui:Label text="Toolbox" />
+            <ui:ListView picking-mode="Ignore" name="lst_Toolbox" show-bound-collection-size="false" class="quest-toolbox__list" />
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

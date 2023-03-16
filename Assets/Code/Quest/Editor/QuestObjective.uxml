@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/Code/Quest/Editor/QuestEditor/QuestObjective.uss?fileID=7433441132597879392&amp;guid=a17b98954bb6a6c458ae998b5d164ae1&amp;type=3#QuestObjective" />
+    <ui:VisualElement picking-mode="Ignore" class="quest-objective">
+        <ui:VisualElement picking-mode="Ignore" class="quest-objective-header">
+            <ui:Label picking-mode="Ignore" name="lbl_ObjectiveType" class="quest-objective-header__type" text="Objective Type" />
+            <ui:TextField picking-mode="Ignore" name="txt_ObjectiveName" label="Name" />
+            <ui:TextField picking-mode="Ignore" binding-path="m_ObjectiveDescription" label="Description" />
+        </ui:VisualElement>
+        <ui:VisualElement picking-mode="Ignore" name="ctr_SubObjectives" class="quest-objective__sub-objectives-list" />
+    </ui:VisualElement>
+</ui:UXML>

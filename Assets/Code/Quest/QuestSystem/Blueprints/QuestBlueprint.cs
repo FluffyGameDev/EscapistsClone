@@ -7,6 +7,7 @@ namespace FluffyGameDev.Escapists.Quest
     public class QuestBlueprint : ScriptableObject
     {
         [SerializeField]
+        [HideInInspector]
         private QuestObjectiveBlueprint m_RootObjective;
         public QuestObjectiveBlueprint RootObjective
         {

@@ -1,10 +1,9 @@
 fileFormatVersion: 2
-guid: 19b654d9dd4f5244a93d551942f606ec
+guid: 59c3ad59de9af7e469d75c51f33859fb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - m_EditorLayout: {fileID: 9197481963319205126, guid: 052cedc944929cd4e810b7b81d2de290, type: 3}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

@@ -6,7 +6,9 @@ namespace FluffyGameDev.Escapists.Quest
     public class SequenceQuestObjectiveBlueprint : QuestObjectiveBlueprint
     {
         [SerializeField]
-        List<QuestObjectiveBlueprint> m_ObjectiveSequence;
+        private List<QuestObjectiveBlueprint> m_ObjectiveSequence;
+        public override List<QuestObjectiveBlueprint> SubObjectives => m_ObjectiveSequence;
+        public override bool HasSubObjectives => true;
 
         public override QuestObjective InstantiateQuestObjective()
         {
