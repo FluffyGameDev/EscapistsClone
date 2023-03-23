@@ -19,6 +19,13 @@
     border-color: rgb(51, 51, 51);
 }
 
+.quest-edition-panel__missing-root {
+    padding: 16px;
+    background-color: rgb(80, 80, 80);
+    border-width: 1px;
+    border-color: rgb(51, 51, 51);
+}
+
 .quest-toolbox {
     width: 300px;
     padding: 16px;
@@ -30,4 +37,5 @@
 
 .quest-toolbox__list {
     flex-grow: 1;
+    padding: 16px;
 }

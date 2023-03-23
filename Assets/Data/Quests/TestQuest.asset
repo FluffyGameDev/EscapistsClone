@@ -1,5 +1,21 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4832288625559755401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a22add0c5f6d25478809e8ebf877536, type: 3}
+  m_Name: Test
+  m_EditorClassIdentifier: 
+  m_ObjectiveDescription: Test
+  m_ToolUsedEvent: {fileID: 11400000, guid: 65ba24f377faeee478cc1407d5bca29d, type: 2}
+  m_WatchedItem: {fileID: 11400000, guid: ea8f35d011e5967428bdda795ee86d19, type: 2}
+  m_WatchedTileType: {fileID: 11400000, guid: 2083662180f07f34aaaf059a6d99da33, type: 2}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,20 +28,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 932ca68fab9da7a40a9572fdacdcb0d0, type: 3}
   m_Name: TestQuest
   m_EditorClassIdentifier: 
-  m_RootObjective: {fileID: 4859430456790355540}
+  m_RootObjective: {fileID: -4832288625559755401}
   m_QuestName: Test Quest
---- !u!114 &4859430456790355540
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dac6a81d1ccc9445a7f1fe274a89b4e, type: 3}
-  m_Name: Test Objective
-  m_EditorClassIdentifier: 
-  m_ObjectiveDescription: Test Objective Description
-  m_ObjectiveGroup: []
-  m_TargetObjectiveCount: 0

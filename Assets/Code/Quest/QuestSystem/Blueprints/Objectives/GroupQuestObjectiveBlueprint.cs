@@ -6,10 +6,12 @@ namespace FluffyGameDev.Escapists.Quest
     public class GroupQuestObjectiveBlueprint : QuestObjectiveBlueprint
     {
         [SerializeField]
+        [HideInInspector]
         private List<QuestObjectiveBlueprint> m_ObjectiveGroup;
         [SerializeField]
         private int m_TargetObjectiveCount;
 
+        public override string SubObjectivesPropertyName => "m_ObjectiveGroup";
         public override List<QuestObjectiveBlueprint> SubObjectives => m_ObjectiveGroup;
         public override bool HasSubObjectives => true;
 

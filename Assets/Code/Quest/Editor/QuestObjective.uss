@@ -1,15 +1,25 @@
 
 .quest-objective {
     background-color: rgb(80, 80, 80);
+    border-width: 1px 0 1px 0;
+    border-color: rgb(51, 51, 51);
 }
 
 .quest-objective--root {
     border-width: 1px;
-    border-color: rgb(51, 51, 51);
 }
 
 .quest-objective-header {
     margin: 16px;
+}
+
+.quest-objective-header__remove-button {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 16px;
+    height: 16px;
+    background-color: rgb(150, 0, 0);
 }
 
 .quest-objective-header__type {
