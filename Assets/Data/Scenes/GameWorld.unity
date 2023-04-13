@@ -525,6 +525,59 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d731b4a0b271654e9f26e6e689fc414, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &146551254
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146551256}
+  - component: {fileID: 146551255}
+  m_Layer: 0
+  m_Name: GameWord_SubScene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &146551255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146551254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45a335734b1572644a6a5d09d87adc65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _SceneAsset: {fileID: 102900000, guid: 9f7e229110412a146898feb9d282ae0d, type: 3}
+  _HierarchyColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  AutoLoadScene: 1
+  _SceneGUID:
+    Value:
+      x: 421718009
+      y: 1101140993
+      z: 2616166790
+      w: 3505006637
+--- !u!4 &146551256
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146551254}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &250075272
 GameObject:
   m_ObjectHideFlags: 0
@@ -6277,6 +6330,7 @@ GameObject:
   - component: {fileID: 2109413111}
   - component: {fileID: 2109413112}
   - component: {fileID: 2109413113}
+  - component: {fileID: 2109413114}
   m_Layer: 0
   m_Name: WorldServices
   m_TagString: Untagged
@@ -6339,32 +6393,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Activities:
-  - m_StartTime: 0
-    m_ActivityName: Sleepy Time
-  - m_StartTime: 8
-    m_ActivityName: Roll Call
-  - m_StartTime: 9
-    m_ActivityName: Breakfast
-  - m_StartTime: 10
-    m_ActivityName: Free Time
-  - m_StartTime: 12
-    m_ActivityName: Lunch
-  - m_StartTime: 13
-    m_ActivityName: Job
-  - m_StartTime: 15
-    m_ActivityName: Sport
-  - m_StartTime: 16
-    m_ActivityName: Shower
-  - m_StartTime: 17
-    m_ActivityName: Free Time
-  - m_StartTime: 19
-    m_ActivityName: Dinner
-  - m_StartTime: 20
-    m_ActivityName: Roll Call
-  - m_StartTime: 21
-    m_ActivityName: Return To Cell
-  - m_StartTime: 22
-    m_ActivityName: Sleepy Time
+  - m_ActivityName: Sleepy Time
+    m_ActivityIdentifiers: []
+    m_StartTime: 0
+  - m_ActivityName: Roll Call
+    m_ActivityIdentifiers: []
+    m_StartTime: 8
+  - m_ActivityName: Breakfast
+    m_ActivityIdentifiers:
+    - {fileID: 11400000, guid: bf639d4f4fff598459500c42570898df, type: 2}
+    - {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+    m_StartTime: 9
+  - m_ActivityName: Free Time
+    m_ActivityIdentifiers: []
+    m_StartTime: 10
+  - m_ActivityName: Lunch
+    m_ActivityIdentifiers: []
+    m_StartTime: 12
+  - m_ActivityName: Job
+    m_ActivityIdentifiers: []
+    m_StartTime: 13
+  - m_ActivityName: Sport
+    m_ActivityIdentifiers: []
+    m_StartTime: 15
+  - m_ActivityName: Shower
+    m_ActivityIdentifiers: []
+    m_StartTime: 16
+  - m_ActivityName: Free Time
+    m_ActivityIdentifiers: []
+    m_StartTime: 17
+  - m_ActivityName: Dinner
+    m_ActivityIdentifiers: []
+    m_StartTime: 19
+  - m_ActivityName: Roll Call
+    m_ActivityIdentifiers: []
+    m_StartTime: 20
+  - m_ActivityName: Return To Cell
+    m_ActivityIdentifiers: []
+    m_StartTime: 21
+  - m_ActivityName: Sleepy Time
+    m_ActivityIdentifiers: []
+    m_StartTime: 22
 --- !u!114 &2109413113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6377,6 +6446,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f2106fb40b3ccc4eb07e6335e1aa2aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2109413114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2109413107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd706af6713fe6140a1634665967468f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InstancePrefab: {fileID: 4796187195580065294, guid: 75c9638365c329a46aebc0c0ebf06037, type: 3}
 --- !u!1 &2119437482
 GameObject:
   m_ObjectHideFlags: 0
@@ -6420,7 +6502,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8789582388974862949
 GameObject:
@@ -6452,7 +6534,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8789582388974862954
 MonoBehaviour:
@@ -6497,7 +6579,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8789582390634966748
 MonoBehaviour:
