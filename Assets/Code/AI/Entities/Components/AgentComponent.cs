@@ -13,5 +13,8 @@ namespace FluffyGameDev.Escapists.AI
     public struct AgentComponent : IComponentData
     {
         public AgentState State;
+        public float IdleEndTime;
+        public float NextIdleDuration;
+        public int NextActivityStepIndex;
     }
 }
