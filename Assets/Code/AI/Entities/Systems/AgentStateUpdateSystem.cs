@@ -81,45 +81,24 @@ namespace FluffyGameDev.Escapists.AI
         private float3 ComputeNextTarget(ref SystemState state, in WorldTransform worldTransform,
             ref AgentComponent agent, ref DynamicBuffer<WorldActivityStepBufferElement> activityStepBuffer)
         {
-            if (activityStepBuffer.Length > 0)
+            float3 target = worldTransform.Position;
+
+            int wantedActivityId = activityStepBuffer[agent.NextActivityStepIndex].ActivityId;
+            foreach (var (activityPosition, activityWorldTransform) in SystemAPI.Query<RefRW<ActivityPositionComponent>, WorldTransform>())
             {
-                float3 target = worldTransform.Position;
-
-                int wantedActivityId = activityStepBuffer[agent.NextActivityStepIndex].ActivityId;
-                foreach (var (activityPosition, activityWorldTransform) in SystemAPI.Query<RefRW<ActivityPositionComponent>, WorldTransform>())
+                if (activityPosition.ValueRO.ActivityId == wantedActivityId)
                 {
-                    if (activityPosition.ValueRO.ActivityId == wantedActivityId)
-                    {
-                        //TODO: reservation
-                        //TODO: job Id, role Id (Guard), property Id (ex: beds)
-                        target = activityWorldTransform.Position;
-                        agent.NextIdleDuration = m_Random.NextFloat(activityPosition.ValueRO.IdleMinDuration, activityPosition.ValueRO.IdleMaxDuration);
-                        break;
-                    }
+                    //TODO: reservation
+                    //TODO: job Id, role Id (Guard), property Id (ex: beds)
+                    target = activityWorldTransform.Position;
+                    agent.NextIdleDuration = m_Random.NextFloat(activityPosition.ValueRO.IdleMinDuration, activityPosition.ValueRO.IdleMaxDuration);
+                    break;
                 }
-
-                agent.NextActivityStepIndex = (agent.NextActivityStepIndex + 1) % activityStepBuffer.Length;
-
-                return target;
             }
-            else
-            {
-                // TODO: Get Remove when no longer needed for testing
-                const float maxIdleDuration = 1.0f; //TODO: move to singleton
-                agent.NextIdleDuration = m_Random.NextFloat(maxIdleDuration);
-                float3 target = m_Random.NextFloat3(new float3(-1.4f, -1.2f, 0.0f), new float3(3.0f, 1.4f, 0.0f));
 
-                if (m_Random.NextBool())
-                {
-                    target.x = worldTransform.Position.x;
-                }
-                else
-                {
-                    target.y = worldTransform.Position.y;
-                }
+            agent.NextActivityStepIndex = (agent.NextActivityStepIndex + 1) % activityStepBuffer.Length;
 
-                return target;
-            }
+            return target;
         }
     }
 }

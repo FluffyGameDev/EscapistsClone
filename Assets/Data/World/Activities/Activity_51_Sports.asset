@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c0df71639b154184b895a5e6dccc5148, type: 3}
-  m_Name: Activity_Meal_GetTray
+  m_Name: Activity_51_Sports
   m_EditorClassIdentifier: 
-  m_ActivityId: 10
+  m_ActivityId: 51

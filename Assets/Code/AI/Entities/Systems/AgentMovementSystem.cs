@@ -10,7 +10,7 @@ namespace FluffyGameDev.Escapists.AI
     [BurstCompile]
     public partial struct AgentMovementSystem : ISystem
     {
-        private const float k_TargetDistanceEpsilon = 0.01f;
+        private const float k_TargetDistanceEpsilon = 0.0001f;
 
         [BurstCompile]
         public void OnCreate(ref SystemState state)

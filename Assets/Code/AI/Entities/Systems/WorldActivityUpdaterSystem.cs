@@ -10,6 +10,7 @@ namespace FluffyGameDev.Escapists.AI
 
         public void OnCreate(ref SystemState state)
         {
+            m_CurrentActivityStartTime = -1;
             state.EntityManager.CreateSingletonBuffer<WorldActivityStepBufferElement>();
         }
 
