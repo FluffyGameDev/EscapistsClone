@@ -1,3 +1,4 @@
+using FluffyGameDev.Escapists.World;
 using Unity.Burst;
 using Unity.Collections;
 using Unity.Entities;
@@ -30,12 +31,10 @@ namespace FluffyGameDev.Escapists.AI
         {
             //TODO: move to a job
             EntityManager em = state.EntityManager;
-            EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
             DynamicBuffer<WorldActivityStepBufferElement> activityStepBuffer = SystemAPI.GetSingletonBuffer<WorldActivityStepBufferElement>();
 
             foreach (var (agent, movementTarget, worldTransform, agentEntity) in
                 SystemAPI.Query<RefRW<AgentComponent>, RefRW<MovementTargetComponent>, WorldTransform>()
-                .WithOptions(EntityQueryOptions.IgnoreComponentEnabledState)
                 .WithEntityAccess())
             {
                 switch (agent.ValueRO.State)
@@ -46,15 +45,15 @@ namespace FluffyGameDev.Escapists.AI
                         {
                             // TODO: switch to path finding component when implemented
                             agent.ValueRW.State = AgentState.Walk;
-                            movementTarget.ValueRW.TargetPosition = ComputeNextTarget(ref state, in worldTransform, ref agent.ValueRW, ref activityStepBuffer);
-                            ecb.SetComponentEnabled<MovementTargetComponent>(agentEntity, true);
+                            movementTarget.ValueRW.TargetPosition = ComputeNextTarget(ref state, in worldTransform, agentEntity, ref agent.ValueRW, ref activityStepBuffer);
+                            movementTarget.ValueRW.IsActive = true;
                         }
                         break;
                     }
                     case AgentState.Walk:
                     {
                         // TODO: switch to path finding component when implemented
-                        if (!em.IsComponentEnabled<MovementTargetComponent>(agentEntity))
+                        if (!movementTarget.ValueRO.IsActive)
                         {
                             agent.ValueRW.IdleEndTime = Time.time + agent.ValueRO.NextIdleDuration;
                             agent.ValueRW.State = AgentState.Idle;
@@ -66,19 +65,11 @@ namespace FluffyGameDev.Escapists.AI
                         //TODO: implement when combat done
                         break;
                     }
-                    case AgentState.Activity:
-                    {
-                        //TODO: implement when activities done
-                        break;
-                    }
                 }
             }
-
-            ecb.Playback(state.EntityManager);
-            ecb.Dispose();
         }
 
-        private float3 ComputeNextTarget(ref SystemState state, in WorldTransform worldTransform,
+        private float3 ComputeNextTarget(ref SystemState state, in WorldTransform worldTransform, Entity agentEntity,
             ref AgentComponent agent, ref DynamicBuffer<WorldActivityStepBufferElement> activityStepBuffer)
         {
             float3 target = worldTransform.Position;
@@ -86,13 +77,24 @@ namespace FluffyGameDev.Escapists.AI
             int wantedActivityId = activityStepBuffer[agent.NextActivityStepIndex].ActivityId;
             foreach (var (activityPosition, activityWorldTransform) in SystemAPI.Query<RefRW<ActivityPositionComponent>, WorldTransform>())
             {
-                if (activityPosition.ValueRO.ActivityId == wantedActivityId)
+                if (activityPosition.ValueRO.ActivityId == wantedActivityId &&
+                    (activityPosition.ValueRO.OwnerAgentId == AgentComponent.InvalidAgentId || activityPosition.ValueRO.OwnerAgentId == agent.AgentId) &&
+                    (!activityPosition.ValueRO.CanBeReserved || activityPosition.ValueRO.ReservingEntity == Entity.Null) &&
+                    (activityPosition.ValueRO.AgentJobId == AgentJobIdentifier.InvalidJobId || activityPosition.ValueRO.AgentJobId == agent.AgentJobId) &&
+                    (activityPosition.ValueRO.AgentRoleId == AgentRoleIdentifier.InvalidRoleId || activityPosition.ValueRO.AgentRoleId == agent.AgentRoleId))
                 {
-                    //TODO: reservation
-                    //TODO: job Id, role Id (Guard), property Id (ex: beds)
+                    if (activityPosition.ValueRO.CanBeReserved)
+                    {
+                        activityPosition.ValueRW.ReservingEntity = agentEntity;
+                    }
+
                     target = activityWorldTransform.Position;
                     agent.NextIdleDuration = m_Random.NextFloat(activityPosition.ValueRO.IdleMinDuration, activityPosition.ValueRO.IdleMaxDuration);
                     break;
+                }
+                else if (activityPosition.ValueRO.ReservingEntity == agentEntity)
+                {
+                    activityPosition.ValueRW.ReservingEntity = Entity.Null;
                 }
             }
 

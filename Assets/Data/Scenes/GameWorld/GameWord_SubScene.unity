@@ -153,8 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &18629544
 Transform:
   m_ObjectHideFlags: 0
@@ -200,8 +204,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 40f4f3e66438169459069aa095651553, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 0
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &36429708
 Transform:
   m_ObjectHideFlags: 0
@@ -247,8 +255,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 2
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &40164278
 Transform:
   m_ObjectHideFlags: 0
@@ -294,8 +306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &70767648
 Transform:
   m_ObjectHideFlags: 0
@@ -341,8 +357,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &94521121
 Transform:
   m_ObjectHideFlags: 0
@@ -388,8 +408,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &135985070
 Transform:
   m_ObjectHideFlags: 0
@@ -435,8 +459,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &159504628
 Transform:
   m_ObjectHideFlags: 0
@@ -482,8 +510,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &168965772
 Transform:
   m_ObjectHideFlags: 0
@@ -529,8 +561,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: bf639d4f4fff598459500c42570898df, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &173401672
 Transform:
   m_ObjectHideFlags: 0
@@ -576,8 +612,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &298831134
 Transform:
   m_ObjectHideFlags: 0
@@ -623,8 +663,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &299996940
 Transform:
   m_ObjectHideFlags: 0
@@ -670,8 +714,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &325240080
 Transform:
   m_ObjectHideFlags: 0
@@ -717,8 +765,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 40f4f3e66438169459069aa095651553, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 0
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &342242305
 Transform:
   m_ObjectHideFlags: 0
@@ -764,8 +816,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &348473105
 Transform:
   m_ObjectHideFlags: 0
@@ -811,8 +867,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &355951833
 Transform:
   m_ObjectHideFlags: 0
@@ -858,8 +918,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 12
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &359241434
 Transform:
   m_ObjectHideFlags: 0
@@ -905,8 +969,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &408527052
 Transform:
   m_ObjectHideFlags: 0
@@ -952,8 +1020,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &445039290
 Transform:
   m_ObjectHideFlags: 0
@@ -999,8 +1071,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 13
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &520174548
 Transform:
   m_ObjectHideFlags: 0
@@ -1046,8 +1122,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 14
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &551911919
 Transform:
   m_ObjectHideFlags: 0
@@ -1093,8 +1173,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 4
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &560754549
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,8 +1224,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &601199111
 Transform:
   m_ObjectHideFlags: 0
@@ -1187,8 +1275,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &602722289
 Transform:
   m_ObjectHideFlags: 0
@@ -1234,8 +1326,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: bf639d4f4fff598459500c42570898df, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &607260745
 Transform:
   m_ObjectHideFlags: 0
@@ -1281,8 +1377,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 6
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &625091646
 Transform:
   m_ObjectHideFlags: 0
@@ -1328,8 +1428,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &630605851
 Transform:
   m_ObjectHideFlags: 0
@@ -1375,8 +1479,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &644471304
 Transform:
   m_ObjectHideFlags: 0
@@ -1422,8 +1530,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &668714920
 Transform:
   m_ObjectHideFlags: 0
@@ -1469,8 +1581,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 0
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &677361475
 Transform:
   m_ObjectHideFlags: 0
@@ -1516,8 +1632,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 9
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &693759082
 Transform:
   m_ObjectHideFlags: 0
@@ -1563,8 +1683,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 5
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &708754403
 Transform:
   m_ObjectHideFlags: 0
@@ -1610,8 +1734,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &755103709
 Transform:
   m_ObjectHideFlags: 0
@@ -1657,8 +1785,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &782492369
 Transform:
   m_ObjectHideFlags: 0
@@ -1704,8 +1836,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 40f4f3e66438169459069aa095651553, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 0
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &789568897
 Transform:
   m_ObjectHideFlags: 0
@@ -1751,8 +1887,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &793223212
 Transform:
   m_ObjectHideFlags: 0
@@ -1798,8 +1938,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 14
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &840712030
 Transform:
   m_ObjectHideFlags: 0
@@ -1845,8 +1989,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 66
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &891908436
 Transform:
   m_ObjectHideFlags: 0
@@ -1892,8 +2040,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &897049844
 Transform:
   m_ObjectHideFlags: 0
@@ -1939,8 +2091,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 2
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &900992610
 Transform:
   m_ObjectHideFlags: 0
@@ -1986,8 +2142,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 3
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &917731996
 Transform:
   m_ObjectHideFlags: 0
@@ -2033,8 +2193,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 7
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &934223753
 Transform:
   m_ObjectHideFlags: 0
@@ -2080,8 +2244,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 11
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &945429638
 Transform:
   m_ObjectHideFlags: 0
@@ -2127,8 +2295,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &963535341
 Transform:
   m_ObjectHideFlags: 0
@@ -2143,6 +2315,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 58
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &984343270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 984343272}
+  - component: {fileID: 984343271}
+  m_Layer: 0
+  m_Name: AgentSpawningSettings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &984343271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984343270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd3f41955de0785498a2347bf8538c20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_CellActivity: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_InmateRoleIdentifier: {fileID: 11400000, guid: 567a706d4297df54e975482bd8de879f, type: 2}
+  m_GuardRoleIdentifier: {fileID: 11400000, guid: 7eb55b35c83bef9499a015376e955872, type: 2}
+  m_AvailableJobIdentifiers:
+  - {fileID: 11400000, guid: e0c7f6252e4da6149a02a5900c86e6f6, type: 2}
+  - {fileID: 11400000, guid: bc812ae2de2b61d41a186ba509a7e31f, type: 2}
+  - {fileID: 11400000, guid: 273a7c818344a64449971c644b67e75e, type: 2}
+  - {fileID: 11400000, guid: 32a8a354ba810c741bac14dc55a562a7, type: 2}
+  m_AgentSpeed: 1
+--- !u!4 &984343272
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 984343270}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.64, y: -3.36, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &986605734
 GameObject:
@@ -2174,8 +2399,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 7
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &986605736
 Transform:
   m_ObjectHideFlags: 0
@@ -2221,8 +2450,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &987276098
 Transform:
   m_ObjectHideFlags: 0
@@ -2268,8 +2501,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1001625503
 Transform:
   m_ObjectHideFlags: 0
@@ -2315,8 +2552,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1014694610
 Transform:
   m_ObjectHideFlags: 0
@@ -2362,8 +2603,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1015209466
 Transform:
   m_ObjectHideFlags: 0
@@ -2378,51 +2623,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 39
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1051395644
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1051395646}
-  - component: {fileID: 1051395645}
-  m_Layer: 0
-  m_Name: Agent
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1051395645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051395644}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd3f41955de0785498a2347bf8538c20, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Speed: 1
---- !u!4 &1051395646
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1051395644}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.4399999, y: -1.4399999, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1052197097
 GameObject:
@@ -2454,8 +2654,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1052197099
 Transform:
   m_ObjectHideFlags: 0
@@ -2501,8 +2705,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 12
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1069791173
 Transform:
   m_ObjectHideFlags: 0
@@ -2548,8 +2756,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 13
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1091788807
 Transform:
   m_ObjectHideFlags: 0
@@ -2595,8 +2807,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1136612861
 Transform:
   m_ObjectHideFlags: 0
@@ -2642,8 +2858,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 40f4f3e66438169459069aa095651553, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 0
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &1149424571
 Transform:
   m_ObjectHideFlags: 0
@@ -2689,8 +2909,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1186241027
 Transform:
   m_ObjectHideFlags: 0
@@ -2736,8 +2960,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1201077046
 Transform:
   m_ObjectHideFlags: 0
@@ -2783,8 +3011,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1220977827
 Transform:
   m_ObjectHideFlags: 0
@@ -2830,8 +3062,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1233289731
 Transform:
   m_ObjectHideFlags: 0
@@ -2877,8 +3113,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 6
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1281504427
 Transform:
   m_ObjectHideFlags: 0
@@ -2924,8 +3164,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1320411807
 Transform:
   m_ObjectHideFlags: 0
@@ -2971,8 +3215,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1480475460
 Transform:
   m_ObjectHideFlags: 0
@@ -3018,8 +3266,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1495345677
 Transform:
   m_ObjectHideFlags: 0
@@ -3065,8 +3317,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1499128551
 Transform:
   m_ObjectHideFlags: 0
@@ -3112,8 +3368,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1527522620
 Transform:
   m_ObjectHideFlags: 0
@@ -3159,8 +3419,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1539946645
 Transform:
   m_ObjectHideFlags: 0
@@ -3206,8 +3470,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1555836181
 Transform:
   m_ObjectHideFlags: 0
@@ -3253,8 +3521,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1576657945
 Transform:
   m_ObjectHideFlags: 0
@@ -3300,8 +3572,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 8
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1610188482
 Transform:
   m_ObjectHideFlags: 0
@@ -3347,8 +3623,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1634780511
 Transform:
   m_ObjectHideFlags: 0
@@ -3394,8 +3674,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1643206159
 Transform:
   m_ObjectHideFlags: 0
@@ -3441,8 +3725,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1653533018
 Transform:
   m_ObjectHideFlags: 0
@@ -3488,8 +3776,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1671756796
 Transform:
   m_ObjectHideFlags: 0
@@ -3535,8 +3827,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1681102954
 Transform:
   m_ObjectHideFlags: 0
@@ -3582,8 +3878,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1704312025
 Transform:
   m_ObjectHideFlags: 0
@@ -3629,8 +3929,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1708129205
 Transform:
   m_ObjectHideFlags: 0
@@ -3676,8 +3980,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1718294670
 Transform:
   m_ObjectHideFlags: 0
@@ -3723,8 +4031,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 3
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1756280994
 Transform:
   m_ObjectHideFlags: 0
@@ -3770,8 +4082,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1773827858
 Transform:
   m_ObjectHideFlags: 0
@@ -3817,8 +4133,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1779059334
 Transform:
   m_ObjectHideFlags: 0
@@ -3864,8 +4184,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 5
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1785939209
 Transform:
   m_ObjectHideFlags: 0
@@ -3911,8 +4235,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 10
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1802445326
 Transform:
   m_ObjectHideFlags: 0
@@ -3958,8 +4286,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1808035565
 Transform:
   m_ObjectHideFlags: 0
@@ -4005,8 +4337,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1826601336
 Transform:
   m_ObjectHideFlags: 0
@@ -4052,8 +4388,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1838076616
 Transform:
   m_ObjectHideFlags: 0
@@ -4099,8 +4439,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 8
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1885302991
 Transform:
   m_ObjectHideFlags: 0
@@ -4146,8 +4490,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1908920764
 Transform:
   m_ObjectHideFlags: 0
@@ -4193,8 +4541,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: a2814e937507dd24aa072b2e65e65c2d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1921248145
 Transform:
   m_ObjectHideFlags: 0
@@ -4240,8 +4592,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1923297736
 Transform:
   m_ObjectHideFlags: 0
@@ -4287,8 +4643,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1926229380
 Transform:
   m_ObjectHideFlags: 0
@@ -4334,8 +4694,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 0
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1936276911
 Transform:
   m_ObjectHideFlags: 0
@@ -4381,8 +4745,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 10
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1938864473
 Transform:
   m_ObjectHideFlags: 0
@@ -4428,8 +4796,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &1967749363
 Transform:
   m_ObjectHideFlags: 0
@@ -4475,8 +4847,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 66
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &1997278346
 Transform:
   m_ObjectHideFlags: 0
@@ -4522,8 +4898,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2003704608
 Transform:
   m_ObjectHideFlags: 0
@@ -4569,8 +4949,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2005756696
 Transform:
   m_ObjectHideFlags: 0
@@ -4616,8 +5000,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2015689639
 Transform:
   m_ObjectHideFlags: 0
@@ -4663,8 +5051,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: 48b4b826dd9a5814e872d73cb4a01a29, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2018959989
 Transform:
   m_ObjectHideFlags: 0
@@ -4710,8 +5102,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 4
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &2041512209
 Transform:
   m_ObjectHideFlags: 0
@@ -4757,8 +5153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: bf639d4f4fff598459500c42570898df, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1
   m_IdleMaxDuration: 1
+  m_CanBeReserved: 0
 --- !u!4 &2049780358
 Transform:
   m_ObjectHideFlags: 0
@@ -4804,8 +5204,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2051869434
 Transform:
   m_ObjectHideFlags: 0
@@ -4851,8 +5255,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: b303d60b973bcf24da84f09cae424696, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2062725145
 Transform:
   m_ObjectHideFlags: 0
@@ -4898,8 +5306,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f13c2fa98ceccee4db31c1d92254b058, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: -1
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 1
 --- !u!4 &2074529275
 Transform:
   m_ObjectHideFlags: 0
@@ -4945,8 +5357,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: d853fcf622fb2a947930b754e3bd7663, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 9
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &2108050202
 Transform:
   m_ObjectHideFlags: 0
@@ -4992,8 +5408,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ActivityIdentifier: {fileID: 11400000, guid: f6e64cec1789d6e4e9b2d7f2475bd92d, type: 2}
+  m_JobIdentifier: {fileID: 0}
+  m_RoleIdentifier: {fileID: 0}
+  m_AgentId: 11
   m_IdleMinDuration: 1000000
   m_IdleMaxDuration: 1000000
+  m_CanBeReserved: 0
 --- !u!4 &2146870703
 Transform:
   m_ObjectHideFlags: 0

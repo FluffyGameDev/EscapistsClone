@@ -22,36 +22,35 @@ namespace FluffyGameDev.Escapists.AI
         {
         }
 
-        [BurstCompile]
+        //[BurstCompile]
         public void OnUpdate(ref SystemState state)
         {
             //TODO: move to a job
-            EntityCommandBuffer ecb = new EntityCommandBuffer(Allocator.Temp);
-            foreach (var (worldTransform, movementTarget, agentEntity) in SystemAPI.Query<RefRW<WorldTransform>, MovementTargetComponent>().WithEntityAccess())
+            foreach (var (worldTransform, movementTarget, agentEntity) in SystemAPI.Query<RefRW<WorldTransform>, RefRW<MovementTargetComponent>>().WithEntityAccess())
             {
-                float3 movement = movementTarget.TargetPosition - worldTransform.ValueRO.Position;
-                float squareDistance = math.lengthsq(movement);
-                if (squareDistance >= k_TargetDistanceEpsilon)
+                if (movementTarget.ValueRW.IsActive)
                 {
-                    float movementDistance = movementTarget.Speed * Time.deltaTime;
-                    if (squareDistance < movementDistance * movementDistance)
+                    float3 movement = movementTarget.ValueRO.TargetPosition - worldTransform.ValueRO.Position;
+                    float squareDistance = math.lengthsq(movement);
+                    if (squareDistance >= k_TargetDistanceEpsilon)
                     {
-                        worldTransform.ValueRW.Position = movementTarget.TargetPosition;
-                        ecb.SetComponentEnabled<MovementTargetComponent>(agentEntity, false);
+                        float movementDistance = movementTarget.ValueRO.Speed * Time.deltaTime;
+                        if (squareDistance < movementDistance * movementDistance)
+                        {
+                            worldTransform.ValueRW.Position = movementTarget.ValueRO.TargetPosition;
+                            movementTarget.ValueRW.IsActive = false;
+                        }
+                        else
+                        {
+                            worldTransform.ValueRW.Position += math.normalize(movement) * movementDistance;
+                        }
                     }
                     else
                     {
-                        worldTransform.ValueRW.Position += math.normalize(movement) * movementDistance;
+                        movementTarget.ValueRW.IsActive = false;
                     }
                 }
-                else
-                {
-                    ecb.SetComponentEnabled<MovementTargetComponent>(agentEntity, false);
-                }
             }
-
-            ecb.Playback(state.EntityManager);
-            ecb.Dispose();
         }
     }
 }
