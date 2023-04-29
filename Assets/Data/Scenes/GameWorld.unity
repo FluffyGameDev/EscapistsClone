@@ -679,7 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b88bc5e9d7fc02f4dadf49a4b600e51f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_DestroyedWallTile: {fileID: 11400000, guid: f28f3c1940aa9d54eb37740e641497d1, type: 2}
+  m_DestroyedWallTile: {fileID: 11400000, guid: 3ed7b2f234f4f7b4eb15efd54847e06d, type: 2}
 --- !u!114 &435537313
 MonoBehaviour:
   m_ObjectHideFlags: 0
