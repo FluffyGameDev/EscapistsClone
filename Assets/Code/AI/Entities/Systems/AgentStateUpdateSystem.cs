@@ -33,8 +33,8 @@ namespace FluffyGameDev.Escapists.AI
             EntityManager em = state.EntityManager;
             DynamicBuffer<WorldActivityStepBufferElement> activityStepBuffer = SystemAPI.GetSingletonBuffer<WorldActivityStepBufferElement>();
 
-            foreach (var (agent, movementTarget, worldTransform, agentEntity) in
-                SystemAPI.Query<RefRW<AgentComponent>, RefRW<MovementTargetComponent>, WorldTransform>()
+            foreach (var (agent, pathFinding, worldTransform, agentEntity) in
+                SystemAPI.Query<RefRW<AgentComponent>, RefRW<PathFindingComponent>, WorldTransform>()
                 .WithEntityAccess())
             {
                 switch (agent.ValueRO.State)
@@ -43,17 +43,14 @@ namespace FluffyGameDev.Escapists.AI
                     {
                         if (Time.time > agent.ValueRO.IdleEndTime)
                         {
-                            // TODO: switch to path finding component when implemented
                             agent.ValueRW.State = AgentState.Walk;
-                            movementTarget.ValueRW.TargetPosition = ComputeNextTarget(ref state, in worldTransform, agentEntity, ref agent.ValueRW, ref activityStepBuffer);
-                            movementTarget.ValueRW.IsActive = true;
+                            pathFinding.ValueRW.StartPathFinding(ComputeNextTarget(ref state, in worldTransform, agentEntity, ref agent.ValueRW, ref activityStepBuffer));
                         }
                         break;
                     }
                     case AgentState.Walk:
                     {
-                        // TODO: switch to path finding component when implemented
-                        if (!movementTarget.ValueRO.IsActive)
+                        if (pathFinding.ValueRO.State == PathFindingState.AtDestination)
                         {
                             agent.ValueRW.IdleEndTime = Time.time + agent.ValueRO.NextIdleDuration;
                             agent.ValueRW.State = AgentState.Idle;

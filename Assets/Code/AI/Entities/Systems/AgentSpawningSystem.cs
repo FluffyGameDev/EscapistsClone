@@ -41,6 +41,7 @@ namespace FluffyGameDev.Escapists.AI
                     Entity newCharacter = ecb.CreateEntity();
                     ecb.AddComponent(newCharacter, new AgentComponent() { AgentId = agentId, AgentRoleId = spawningSettings.InmateRoleId, AgentJobId = jobId });
                     ecb.AddComponent(newCharacter, new MovementTargetComponent() { Speed = spawningSettings.AgentSpeed, IsActive = false });
+                    ecb.AddComponent(newCharacter, new PathFindingComponent() { Path = new NativeList<Unity.Mathematics.int2>(Allocator.Persistent) });
                     ecb.AddComponent(newCharacter, new WorldTransform() { Position = worldTransform.Position });
                     ++agentId;
                 }
